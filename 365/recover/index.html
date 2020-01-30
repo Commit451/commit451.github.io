@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Recovery</title>
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+    <header
+      class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Recovering Entries</span>
+        <div class="mdl-layout-spacer"></div>
+      </div>
+    </header>
+    <div class="demo-ribbon"></div>
+    <main class="demo-main mdl-layout__content">
+      <div class="demo-container mdl-grid">
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div
+          class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+
+          <h3>We Apologize</h3>
+          <p>
+            We are sorry for the inconvinience that this has caused. Don't worry, your entries still exist. This is just
+            a rare bug with the app where it
+            gets confused about where the entries are located in your Google Drive account. Since your Google Drive is
+            private and only accessible to you,
+            we must ask for your help in correcting the issue, in this step by step guide. Since this will involve
+            following the instructions of this page and changing things in the app, we recommend
+            viewing this page on a computer, while having your phone in your hand with the app open.
+          </p>
+          <h4>Step 1: Accessing the debug menu</h4>
+          <p>
+            Hidden within the app is a debug menu that is intended only for developer use. We are going to access that
+            menu in order to fix your issue with entries not showing. To access the menu,
+            open the navigation drawer (by swiping from the left to right, or tapping the 3 line icon in the top left of
+            the app) and tap on the title "Little questions, big thoughts." 5 times in a row.
+            (If you are using the Quote Notes journal, you will instead see it say "Reflecting with the greats".)
+
+          </p>
+          <img src="images/nav.png" width="270" height="540" alt="Navigation drawer to access the debug menu" />
+          <h4>Step 2: Viewing the folders</h4>
+          <p>
+            You should now see a screen with the title "WARNING: TESTING ONLY" in big scary letters. Don't worry, you
+            are in the right place! Please now tap on the button that says "SHOW INTERNAL FILES AND FOLDERS"
+          </p>
+          <img src="images/debug.png" width="270" height="540" alt="Debug menu with highlighted button" />
+          <h4>Step 3: Choosing the correct folder to delete</h4>
+          <p>
+            What you are seeing now is a basic view of the files that exist within your Google Drive account that
+            compose your journal. The title at the top shows a "path" of which folder you are viewing (like
+            breadcrumbs). The issue that you will see here is that there are two folders named "journal",
+            as seen below:
+          </p>
+          <img src="images/files.png" width="270" height="540" alt="A view of your internal files" />
+          <br></br>
+          <p>
+            The solution is to delete the extra "journal" folder, while keeping the correct one around. <b>Please be
+              careful with the next steps, as deleting the wrong folder will result in losing journal entries.</b>
+            You can tap the folders to view their contents and then press the back arrow button on your phone to
+            navigate back to the previous folder. In order to determine which folder you need to delete,
+            you will want to go into each of the "journal" folders by tapping on them, and then tapping on the "p"
+            folder.
+          </p>
+          <img src="images/p.png" width="270" height="540" alt="A view showing the p folder" />
+          <br></br>
+          <p>
+            The "journal" "p" folder that you <b>want to keep</b> will look like the image below, with <b>many
+              entries.</b>
+          </p>
+          <img src="images/correct.png" width="270" height="540" alt="A view of the correct journal folder" />
+          <br></br>
+          <p>
+            The "journal" "p" folder which is <b>accidental</b> and <b>should be deleted</b> will look like the image
+            below, with <b>fewer entries.</b>
+          </p>
+          <img src="images/accidental.png" width="270" height="540" alt="A view of the accidental journal folder" />
+          <br></br>
+          <p>
+            As you can see, the "p" folder (within the "journal" folder) with <b>fewer</b> (or possibly zero) entries is
+            the one we will be deleting,
+            since it is one that was created by accident.
+          </p>
+          <h4>Step 4: Deleting the accidental folder</h4>
+          <p>
+            Once you are sure you know which "journal" folder you need to delete by looking at the contents of its "p"
+            folder, you can navigate back to the first
+            screen which showed two (or more) "journal" folders. Then, you can tap on the three dots icon and
+            select "Delete". <b>Please be sure you are deleting the right folder before doing this, as there is no way
+              to undo this action.</b> Note that you want to delete the <b>entire "journal" folder</b> and not just the
+            "p" folder inside of it
+          </p>
+          <h4>Step 5: Restarting the app</h4>
+          <p>
+            Now that you have deleted the accidental folder, you can <a
+              href="https://www.wikihow.com/Restart-Apps-on-Android">restart the 365 Journals app</a> and then see all
+            your entries once again. We have
+            made updates to the app to fix this bug as far as we are aware, but if it happens again, please send us an
+            email and follow these steps again. Happy journaling!
+          </p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</body>
+
+</html>
