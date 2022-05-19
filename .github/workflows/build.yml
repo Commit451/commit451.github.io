@@ -15,7 +15,7 @@ jobs:
         with:
           flutter-version: '3.0.0'
       - run: flutter pub get
-      - run: flutter build web --base-href "/website-test/"
+      - run: flutter build web --base-href
       - uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages
