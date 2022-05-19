@@ -89,16 +89,23 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget bottomCard() {
-    return Row(
+    return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        link("Privacy", () {
-          Nav.navigateToPrivacy(context);
-        }),
-        horizontalSeparator(),
-        link("Terms & Conditions", () {
-          Nav.navigateToTermsAndConditions(context);
-        }),
+        const Text("Copyright © Commit 451. All rights reserved"),
+        verticalSeparator(),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            link("Privacy", () {
+              Nav.navigateToPrivacy(context);
+            }),
+            horizontalSeparator(),
+            link("Terms & Conditions", () {
+              Nav.navigateToTermsAndConditions(context);
+            }),
+          ],
+        )
       ],
     );
   }
