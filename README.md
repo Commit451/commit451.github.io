@@ -1,4 +1,4 @@
-# commit451
+# commit451.github.io
 
 Website for Commit 451, created in Flutter
 
