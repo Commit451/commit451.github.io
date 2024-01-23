@@ -12,7 +12,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Commit 451',
       theme: ThemeData(
-        primarySwatch: Commit451Colors.primaryMaterialColor(),
+        // Define the default brightness and colors.
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Commit451Colors.primaryColor(),
+        ),
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
