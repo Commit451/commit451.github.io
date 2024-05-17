@@ -2,7 +2,7 @@ import 'package:commit451/ui/ui_factory.dart';
 import 'package:flutter/material.dart';
 
 class PrivacyPage extends StatelessWidget {
-  const PrivacyPage({Key? key}) : super(key: key);
+  const PrivacyPage({super.key});
 
   @override
   Widget build(BuildContext context) {

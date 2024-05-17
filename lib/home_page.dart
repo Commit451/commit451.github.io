@@ -8,7 +8,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -17,9 +17,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   void _launchUrl(String url) async {
     Uri uri = Uri.parse(url);
-    if (!await launchUrl(uri)) {
-      SnackBarHelper.show(context, 'Could not launch $url');
-    }
+    await launchUrl(uri);
   }
 
   @override
