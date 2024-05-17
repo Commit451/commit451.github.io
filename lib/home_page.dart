@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const Text("Copyright © Commit 451. All rights reserved"),
+        const Text("Copyright © Commit 451 LLC. All rights reserved"),
         verticalSeparator(),
         Row(
           mainAxisSize: MainAxisSize.min,
