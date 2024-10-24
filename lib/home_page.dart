@@ -1,7 +1,6 @@
 import 'package:commit451/nav.dart';
 import 'package:commit451/ui/commit451_styles.dart';
 import 'package:commit451/ui/commit451_urls.dart';
-import 'package:commit451/ui/snackbar_helper.dart';
 import 'package:commit451/ui/ui_factory.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -73,7 +72,7 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  button(FontAwesomeIcons.twitter, urlTwitter),
+                  button(FontAwesomeIcons.xTwitter, urlX),
                   button(FontAwesomeIcons.github, urlGitHub),
                   button(Icons.android, urlPlayStore),
                 ],
