@@ -1,3 +1,4 @@
+import 'package:commit451/account_deletion_page.dart';
 import 'package:commit451/home_page.dart';
 import 'package:commit451/privacy_page.dart';
 import 'package:commit451/terms_conditions_page.dart';
@@ -23,6 +24,7 @@ class App extends StatelessWidget {
         '/': (context) => const HomePage(),
         '/privacy': (context) => const PrivacyPage(),
         '/terms-conditions': (context) => const TermsConditionsPage(),
+        '/account-deletion': (context) => const AccountDeletionPage(),
       },
     );
   }
