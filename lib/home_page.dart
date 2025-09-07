@@ -23,21 +23,25 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/bg.png"),
-              fit: BoxFit.cover,
-            ),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/bg.png"),
+            fit: BoxFit.cover,
           ),
-          child: Stack(children: [
+        ),
+        child: Stack(
+          children: [
             Align(alignment: AlignmentDirectional.center, child: centerCard()),
             Align(
-                alignment: AlignmentDirectional.bottomCenter,
-                child: Column(mainAxisSize: MainAxisSize.min, children: [
-                  bottomCard(),
-                  verticalSeparator(),
-                ]))
-          ])),
+              alignment: AlignmentDirectional.bottomCenter,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [bottomCard(), verticalSeparator()],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -54,14 +58,14 @@ class _HomePageState extends State<HomePage> {
             verticalSeparator(),
             ClipRRect(
               borderRadius: BorderRadius.circular(100.0),
-              child: Image.asset("assets/images/avatar.png",
-                  width: 200, height: 200),
+              child: Image.asset(
+                "assets/images/avatar.png",
+                width: 200,
+                height: 200,
+              ),
             ),
             verticalSeparator(),
-            Text(
-              "Commit 451",
-              style: logoStyle,
-            ),
+            Text("Commit 451", style: logoStyle),
             Text(
               "451 times more committed to creating apps with clean code and modern design for a true experience inspired by user instinct.",
               style: Theme.of(context).textTheme.headlineSmall,
@@ -102,7 +106,7 @@ class _HomePageState extends State<HomePage> {
               Nav.navigateToTermsAndConditions(context);
             }),
           ],
-        )
+        ),
       ],
     );
   }
@@ -110,10 +114,7 @@ class _HomePageState extends State<HomePage> {
   Widget link(String text, GestureTapCallback callback) {
     return InkWell(
       onTap: callback,
-      child: Text(
-        text,
-        style: const TextStyle(fontWeight: FontWeight.bold),
-      ),
+      child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold)),
     );
   }
 
@@ -126,10 +127,7 @@ class _HomePageState extends State<HomePage> {
       fillColor: Colors.white,
       padding: const EdgeInsets.all(15.0),
       shape: const CircleBorder(),
-      child: Icon(
-        iconData,
-        size: 35.0,
-      ),
+      child: Icon(iconData, size: 35.0),
     );
   }
 }

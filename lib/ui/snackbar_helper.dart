@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class SnackBarHelper {
-  static void show(BuildContext context, String content,
-      {SnackBarAction? action}) {
+  static void show(
+    BuildContext context,
+    String content, {
+    SnackBarAction? action,
+  }) {
     final snackBar = SnackBar(content: Text(content), action: action);
 
     // Find the ScaffoldMessenger in the widget tree
