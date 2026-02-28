@@ -10,7 +10,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950/60 via-gray-950/80 to-gray-950" />
       </div>
 
-      <div className="flex min-h-screen flex-col items-center justify-center px-6">
+      <div className="flex min-h-screen flex-col items-center px-6">
+        {/* Spacer to push card toward center */}
+        <div className="flex-1" />
         {/* Hero Card */}
         <main className="w-full max-w-lg animate-fade-in">
           <div className="rounded-2xl border border-gray-800 bg-gray-900/70 p-8 shadow-2xl shadow-brand-teal/5 backdrop-blur-md sm:p-12">
@@ -62,7 +64,8 @@ export default function Home() {
         </main>
 
         {/* Footer */}
-        <div className="mt-auto w-full">
+        <div className="flex-1" />
+        <div className="w-full">
           <Footer />
         </div>
       </div>
