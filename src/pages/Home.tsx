@@ -37,7 +37,7 @@ export default function Home() {
 
             {/* Tagline */}
             <p className="mt-4 text-center text-base leading-relaxed text-gray-400 sm:text-lg">
-              451 times more committed to creating apps with clean code and modern design for a true experience inspired by user instinct.
+              A pleasure to build.
             </p>
 
             {/* Social Links */}
