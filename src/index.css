@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "FiraCode";
+  src: url("/firacode-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-brand-teal: #60d4c5;
+  --color-brand-teal-dark: #4ab8aa;
+  --color-brand-red: #e74c3c;
+  --color-brand-red-dark: #c0392b;
+  --font-fira: "FiraCode", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
