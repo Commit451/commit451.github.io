@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Commit 451</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { teal: '#60d4c5', red: '#e74c3c' },
+            dark: { 950: '#030712', 900: '#111827', 800: '#1f2937', 700: '#374151' }
+          },
+          fontFamily: {
+            fira: ['"Fira Code"', 'monospace'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-dark-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col items-center justify-center px-6">
+  <div class="text-center">
+    <p class="font-fira text-8xl font-bold text-brand-teal">404</p>
+    <h1 class="mt-4 text-2xl font-bold text-white">Page not found</h1>
+    <p class="mt-3 text-gray-400">The page you're looking for doesn't exist or has been moved.</p>
+    <a href="/" class="mt-8 inline-flex items-center gap-2 rounded-lg border border-dark-700 px-6 py-3 text-sm font-medium text-gray-300 hover:border-brand-teal hover:text-brand-teal transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Home
+    </a>
+  </div>
+</body>
+</html>
