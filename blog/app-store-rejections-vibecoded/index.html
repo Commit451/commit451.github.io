@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know | Commit 451</title>
+  <meta name="description" content="Our app was rejected by Apple 9 times in a row, costing us 18 days. Here are the App Store review pitfalls that AI coding tools won't warn you about — and how to avoid them.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Commit 451">
+  <meta name="keywords" content="app store rejection, Apple review, vibecoded app rejected, Sign in with Apple, account deletion requirement, iOS app review, app store compliance, in-app purchases, StoreKit, AI generated app rejected">
+  <link rel="canonical" href="https://commit451.com/blog/app-store-rejections-vibecoded/">
+  <meta name="theme-color" content="#60d4c5">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know">
+  <meta property="og:description" content="9 rejections. 18 days lost. Here are the App Store pitfalls AI coding tools won't warn you about.">
+  <meta property="og:url" content="https://commit451.com/blog/app-store-rejections-vibecoded/">
+  <meta property="og:image" content="https://commit451.com/images/avatar.png">
+  <meta property="og:site_name" content="Commit 451">
+  <meta property="article:published_time" content="2026-03-12T00:00:00Z">
+  <meta property="article:author" content="Commit 451">
+  <meta property="article:section" content="Engineering">
+  <meta property="article:tag" content="app store">
+  <meta property="article:tag" content="vibe coding">
+  <meta property="article:tag" content="iOS">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Commit451">
+  <meta name="twitter:title" content="We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know">
+  <meta name="twitter:description" content="9 rejections. 18 days lost. The App Store pitfalls AI coding tools won't warn you about.">
+  <meta name="twitter:image" content="https://commit451.com/images/avatar.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { teal: '#60d4c5', red: '#e74c3c' },
+            dark: { 950: '#030712', 900: '#111827', 800: '#1f2937', 700: '#374151' }
+          },
+          fontFamily: {
+            fira: ['"Fira Code"', 'monospace'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know",
+    "description": "9 rejections, 18 days lost. The App Store review pitfalls that AI coding tools won't warn you about.",
+    "author": {
+      "@type": "Organization",
+      "name": "Commit 451",
+      "url": "https://commit451.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Commit 451",
+      "url": "https://commit451.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://commit451.com/images/avatar.png"
+      }
+    },
+    "datePublished": "2026-03-12",
+    "dateModified": "2026-03-12",
+    "mainEntityOfPage": "https://commit451.com/blog/app-store-rejections-vibecoded/",
+    "keywords": ["app store rejection", "Apple review", "vibe coding", "iOS", "Sign in with Apple", "account deletion", "in-app purchases"],
+    "articleSection": "Engineering"
+  }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .prose h2 { scroll-margin-top: 5rem; }
+    .prose code {
+      background: rgba(96, 212, 197, 0.1);
+      border: 1px solid rgba(96, 212, 197, 0.2);
+      border-radius: 0.375rem;
+      padding: 0.125rem 0.375rem;
+      font-size: 0.875em;
+      color: #60d4c5;
+    }
+    .prose pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: inherit;
+    }
+    .callout {
+      border-left: 3px solid #e74c3c;
+      background: rgba(231, 76, 60, 0.05);
+    }
+    .callout-teal {
+      border-left: 3px solid #60d4c5;
+      background: rgba(96, 212, 197, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-dark-950 text-gray-100 font-sans antialiased">
+
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute inset-0 bg-dark-950"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-dark-700/50 bg-dark-950/80 backdrop-blur-md">
+    <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <img src="/images/avatar.png" alt="Commit 451 logo" width="36" height="36" class="rounded-full border border-dark-700 group-hover:border-brand-teal transition-colors">
+        <span class="font-fira font-bold text-lg text-white group-hover:text-brand-teal transition-colors">Commit 451</span>
+      </a>
+      <div class="hidden sm:flex items-center gap-8 text-sm font-medium">
+        <a href="/#work" class="text-gray-400 hover:text-brand-teal transition-colors">Work</a>
+        <a href="/#about" class="text-gray-400 hover:text-brand-teal transition-colors">About</a>
+        <a href="/blog/" class="text-brand-teal transition-colors">Blog</a>
+        <a href="https://cal.com/commit451/15min" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-brand-teal/60 px-4 py-2 text-brand-teal hover:bg-brand-teal/10 transition-all">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <article class="pt-28 pb-24 px-6">
+      <div class="mx-auto max-w-3xl">
+
+        <!-- Breadcrumb -->
+        <nav class="mb-8 text-sm text-gray-500" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-brand-teal transition-colors">Home</a>
+          <span class="mx-2">›</span>
+          <a href="/blog/" class="hover:text-brand-teal transition-colors">Blog</a>
+          <span class="mx-2">›</span>
+          <span class="text-gray-400">App Store Rejections</span>
+        </nav>
+
+        <!-- Header -->
+        <header class="mb-12">
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs px-2.5 py-1 rounded-full bg-brand-teal/10 text-brand-teal border border-brand-teal/20">App Store</span>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-brand-teal/10 text-brand-teal border border-brand-teal/20">Vibe Coding</span>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-brand-teal/10 text-brand-teal border border-brand-teal/20">iOS</span>
+          </div>
+          <h1 class="font-fira text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+            We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know
+          </h1>
+          <p class="mt-4 text-lg text-gray-400">
+            9 rejections. 18 days lost. Each review cycle took about 2 days, and each time we thought we'd nailed it. We hadn't. Here's everything we learned so you don't repeat our mistakes.
+          </p>
+          <div class="mt-6 flex items-center gap-4 text-sm text-gray-500">
+            <img src="/images/avatar.png" alt="Commit 451" width="32" height="32" class="rounded-full border border-dark-700">
+            <span>Commit 451</span>
+            <span>·</span>
+            <time datetime="2026-03-12">March 12, 2026</time>
+            <span>·</span>
+            <span>10 min read</span>
+          </div>
+        </header>
+
+        <!-- Content -->
+        <div class="prose max-w-none text-gray-300 leading-relaxed space-y-6">
+
+          <div class="callout rounded-lg p-6 my-8">
+            <p class="text-white font-semibold mb-2">⏱️ The real cost of rejection</p>
+            <p class="text-gray-400 text-sm">Each App Store review takes roughly 24–48 hours. When you get rejected, you fix the issue, resubmit, and wait again. Nine rejections at ~2 days each meant <strong class="text-white">18 days of dead time</strong> between our "finished" app and actual launch. In the AI space, where the landscape shifts weekly, that's an eternity.</p>
+          </div>
+
+          <p class="text-lg">
+            If you've vibecoded an iOS app and you're getting ready to submit it to the App Store — stop. Read this first. AI coding tools are incredible at building features, but they have zero awareness of Apple's review guidelines. And Apple's reviewers are thorough, sometimes frustratingly so.
+          </p>
+          <p>
+            We've been through this gauntlet more times than we'd like to admit. Here are the rejections that cost us the most time, and how to avoid each one.
+          </p>
+
+          <h2 class="font-fira text-2xl font-bold text-white mt-12 mb-4" id="sign-in-with-apple">1. Sign in with Apple — it's not optional</h2>
+          <p>
+            This one catches almost every vibecoder. You've added Google Sign-In, maybe email/password, maybe even Sign in with GitHub. You submit. Rejected.
+          </p>
+          <p>
+            <strong class="text-white">Apple's rule is clear:</strong> if your app offers any third-party sign-in option (Google, Facebook, Twitter, etc.), you <em>must</em> also offer Sign in with Apple. It's not a suggestion. It's <a href="https://developer.apple.com/sign-in-with-apple/get-started/" target="_blank" rel="noopener noreferrer" class="text-brand-teal hover:text-brand-teal/80 transition-colors">guideline 4.8</a>, and reviewers enforce it consistently.
+          </p>
+          <p>
+            Why does this trip up vibecoders specifically? Because when you prompt an AI to "add Google Sign-In," it does exactly that — and nothing more. It doesn't know about Apple's review guidelines. It doesn't warn you that you'll need to implement an entirely separate authentication flow. And Sign in with Apple isn't trivial to implement — it has its own quirks:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-400">
+            <li>Apple only sends the user's name on the <em>first</em> sign-in — if you don't capture it then, it's gone forever</li>
+            <li>Users can choose to hide their real email, giving you a relay address instead</li>
+            <li>The implementation differs significantly between native iOS and cross-platform frameworks</li>
+            <li>You need to configure it in your Apple Developer account, your App ID, and your entitlements — it's not just a code change</li>
+          </ul>
+
+          <div class="callout-teal rounded-lg p-6 my-8">
+            <p class="text-white font-semibold mb-2">✅ How to avoid this rejection</p>
+            <p class="text-gray-400 text-sm">If your app has <em>any</em> third-party login, add Sign in with Apple from the start. Build it alongside your other auth flows, not as an afterthought. And make sure you handle the name-only-on-first-auth edge case — store it immediately on your backend.</p>
+          </div>
+
+          <h2 class="font-fira text-2xl font-bold text-white mt-12 mb-4" id="account-deletion">2. Account deletion — you must let users leave</h2>
+          <p>
+            Since June 2022, Apple requires that any app supporting account creation must also provide a way to <strong class="text-white">initiate deletion of their account from within the app</strong>. Not from a website. Not by emailing support. From inside the app itself.
+          </p>
+          <p>
+            This sounds simple, but the implementation has real teeth:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-400">
+            <li>The delete option must be <strong class="text-white">easy to find</strong> — buried three menus deep won't pass review</li>
+            <li>You need to actually delete (or begin the deletion process for) the user's data, not just deactivate the account</li>
+            <li>If the user has an active subscription, you need to explain that deleting their account doesn't automatically cancel it — and ideally link them to subscription management</li>
+            <li>If you're using a backend service (Firebase, Supabase, etc.), you need to handle deletion there too — not just remove the local auth state</li>
+            <li>The flow must work reliably, and the reviewer <em>will</em> test it</li>
+          </ul>
+          <p>
+            AI tools almost never generate account deletion flows. Why would they? It's not a feature anyone asks for when they're excitedly building their app. But Apple will reject you without it, every single time.
+          </p>
+
+          <div class="callout-teal rounded-lg p-6 my-8">
+            <p class="text-white font-semibold mb-2">✅ How to avoid this rejection</p>
+            <p class="text-gray-400 text-sm">Add a "Delete Account" option in your app's settings or profile screen. Make it a clear, two-step flow (tap delete → confirm). Wire it to actually purge user data from your backend. If subscriptions are involved, show a message explaining they'll need to cancel separately in Settings → Subscriptions. Test the entire flow end-to-end before submitting.</p>
+          </div>
+
+          <h2 class="font-fira text-2xl font-bold text-white mt-12 mb-4" id="subscriptions">3. Subscriptions and in-app purchases — Apple's most complex minefield</h2>
+          <p>
+            If your app charges money for anything — features, content, services — buckle up. Apple's in-app purchase requirements are extensive, specific, and unforgiving. This is where we burned the most review cycles, and it's where we see vibecoded apps fail the hardest.
+          </p>
+          <p>
+            Here's the thing: AI coding tools will happily help you integrate Stripe, set up a payment page, or add a "Pro" tier. What they won't tell you is that <strong class="text-white">Apple requires all digital goods and services sold within iOS apps to use their in-app purchase system (StoreKit)</strong>. Not Stripe. Not your own payment flow. Apple's system, with Apple's 15–30% cut.
+          </p>
+          <p>
+            The rules for subscriptions specifically are labyrinthine:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-400">
+            <li><strong class="text-white">You must use StoreKit</strong> for all digital content/features — third-party payment for digital goods is a rejection</li>
+            <li>Subscription terms must be clearly displayed <em>before</em> the purchase button — price, duration, renewal terms, and how to cancel</li>
+            <li>Free trials must clearly state when they convert to paid and at what price</li>
+            <li>You need to link to Apple's standard Terms of Use and your own Privacy Policy</li>
+            <li>Your app must work in a "degraded" state for non-subscribers — you can't just show a paywall with no other content</li>
+            <li>Restore purchases must be available and functional</li>
+            <li>If you offer subscriptions on other platforms (web, Android), you cannot mention it in the iOS app or direct users to purchase elsewhere</li>
+          </ul>
+          <p>
+            The StoreKit integration itself is non-trivial. You're dealing with receipt validation, transaction listeners, handling interrupted purchases, upgrades/downgrades between tiers, grace periods for billing issues, and family sharing. It's one of the most complex APIs on the platform.
+          </p>
+          <p>
+            And here's what makes it especially painful for vibecoders: <strong class="text-white">each rejection for subscription issues often reveals a different sub-issue</strong>. You fix the missing price display, resubmit, wait 2 days, and get rejected because your free trial language isn't explicit enough. Fix that, wait 2 more days, rejected because restore purchases doesn't work in sandbox. It's a cascade.
+          </p>
+
+          <div class="callout-teal rounded-lg p-6 my-8">
+            <p class="text-white font-semibold mb-2">✅ How to avoid this rejection</p>
+            <p class="text-gray-400 text-sm">If your app has subscriptions, treat StoreKit integration as a first-class feature, not a bolt-on. Use StoreKit 2 (the modern API) if you're targeting iOS 15+. Display all pricing info clearly on your paywall — Apple provides APIs to fetch localized prices, use them. Implement restore purchases. Test thoroughly in the sandbox environment. And read <a href="https://developer.apple.com/app-store/review/guidelines/#in-app-purchase" target="_blank" rel="noopener noreferrer" class="text-brand-teal hover:text-brand-teal/80">section 3.1 of the guidelines</a> cover to cover — it's long, but every sentence matters.</p>
+          </div>
+
+          <h2 class="font-fira text-2xl font-bold text-white mt-12 mb-4" id="privacy">4. Privacy nutrition labels and data collection</h2>
+          <p>
+            Before you even submit your app binary, you have to fill out Apple's privacy "nutrition labels" in App Store Connect. These declare what data your app collects, how it's used, and whether it's linked to the user's identity.
+          </p>
+          <p>
+            The problem? Most vibecoders don't actually know what data their app collects. If you're using Firebase Analytics, you're collecting device IDs, usage data, and crash logs. If you're using AdMob, you're collecting advertising identifiers. If you integrated any third-party SDK, it's probably collecting something.
+          </p>
+          <p>
+            Apple cross-references your privacy declarations with what your app actually does. If they don't match, you get rejected. And if you declare "no data collected" but your app binary contains tracking frameworks, that's a fast rejection with a pointed message.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-400">
+            <li>Audit every SDK and framework in your project for data collection</li>
+            <li>Firebase alone requires declaring analytics data, crash data, and potentially advertising data</li>
+            <li>If you use any ad networks, you likely need an App Tracking Transparency (ATT) prompt</li>
+            <li>Your privacy policy must actually match what you declare — and it must be accessible from within the app</li>
+          </ul>
+
+          <div class="callout-teal rounded-lg p-6 my-8">
+            <p class="text-white font-semibold mb-2">✅ How to avoid this rejection</p>
+            <p class="text-gray-400 text-sm">Before submitting, do a full dependency audit. List every third-party SDK, check what data it collects, and fill out the privacy labels accurately. Write a privacy policy that matches (or use a generator and customize it). If in doubt, declare more rather than less — under-declaring is a rejection, over-declaring is just cautious.</p>
+          </div>
+
+          <h2 class="font-fira text-2xl font-bold text-white mt-12 mb-4" id="minimum-functionality">5. "Minimum functionality" and the web-view trap</h2>
+          <p>
+            Apple wants apps that feel like apps. If your vibecoded project is essentially a wrapper around a website — a WebView that loads your web app — there's a good chance Apple will reject it under guideline 4.2 (Minimum Functionality).
+          </p>
+          <p>
+            This is increasingly common in the vibecoding world because it's fast. Build a web app, wrap it in Capacitor or a WebView, submit to the App Store. But Apple explicitly discourages this:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-400">
+            <li>Apps that are primarily web content wrapped in a native shell get rejected</li>
+            <li>Apps that duplicate the functionality of Safari get rejected</li>
+            <li>Apps must provide features or an experience beyond what a website offers — push notifications, offline support, device integration, etc.</li>
+            <li>If your app could just be a bookmark, Apple will tell you exactly that</li>
+          </ul>
+          <p>
+            Even if your app isn't a pure WebView, Apple may flag it if the native experience feels thin. They're looking for apps that justify their existence on the platform.
+          </p>
+
+          <div class="callout-teal rounded-lg p-6 my-8">
+            <p class="text-white font-semibold mb-2">✅ How to avoid this rejection</p>
+            <p class="text-gray-400 text-sm">If you're wrapping a web app, add meaningful native features: push notifications, offline caching, widgets, Shortcuts integration, or native UI components. The more your app takes advantage of the platform, the less likely Apple is to flag it. If your app truly is just a website, consider publishing it as a Progressive Web App instead.</p>
+          </div>
+
+          <hr class="border-dark-700 my-12">
+
+          <h2 class="font-fira text-2xl font-bold text-white mt-12 mb-4">The math that matters</h2>
+          <p>
+            Let's make the cost concrete. Say you're a solo founder who vibecoded an app over a weekend. You're excited. You submit on Monday.
+          </p>
+          <ul class="list-disc list-inside space-y-3 text-gray-400">
+            <li><strong class="text-white">Rejection #1 (Day 2):</strong> Missing Sign in with Apple. You spend a day implementing it, resubmit.</li>
+            <li><strong class="text-white">Rejection #2 (Day 5):</strong> No account deletion flow. Another day of work, resubmit.</li>
+            <li><strong class="text-white">Rejection #3 (Day 8):</strong> Subscription pricing not displayed clearly. Fix, resubmit.</li>
+            <li><strong class="text-white">Rejection #4 (Day 11):</strong> Free trial terms aren't explicit enough. Fix, resubmit.</li>
+            <li><strong class="text-white">Rejection #5 (Day 14):</strong> Restore purchases doesn't work in sandbox. Fix, resubmit.</li>
+          </ul>
+          <p>
+            That's already two weeks gone, and we haven't even hit the privacy label issues or the minimum functionality check. In a fast-moving space — especially AI, where a competitor can ship a similar idea any day — <strong class="text-white">every day you're stuck in review purgatory is a day someone else might beat you to market</strong>.
+          </p>
+          <p>
+            This is why we've built a pre-submission compliance check into our vibecode rescue process. We go through Apple's (and Google's) review guidelines against your app <em>before</em> you submit, catching every one of these issues in a single pass instead of discovering them one rejection at a time.
+          </p>
+
+          <h2 class="font-fira text-2xl font-bold text-white mt-12 mb-4">The vibecoder's App Store checklist</h2>
+          <p>
+            Before you hit submit, make sure you can check every one of these:
+          </p>
+          <div class="bg-dark-900 rounded-xl border border-dark-700 p-6 my-6">
+            <ul class="space-y-3 text-gray-300">
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Sign in with Apple implemented (if you have any third-party sign-in)</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Account deletion flow — accessible, functional, actually deletes data</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> All in-app purchases use StoreKit (no third-party payment for digital goods)</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Subscription pricing, duration, and renewal terms clearly displayed</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Free trial conversion terms explicitly stated</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Restore purchases button works in sandbox</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Privacy nutrition labels filled out accurately</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Privacy policy accessible within the app</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> ATT prompt if using any advertising/tracking SDKs</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> App provides native value beyond a web wrapper</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> App doesn't crash on any standard device/OS combination</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> No hardcoded API keys or secrets in the binary</li>
+            </ul>
+          </div>
+
+          <hr class="border-dark-700 my-12">
+
+          <p class="text-lg">
+            The App Store review process isn't adversarial — Apple genuinely wants good apps on their platform. But the guidelines are extensive, and AI coding tools are completely unaware of them. Knowing the rules before you submit is the difference between launching this week and launching next month.
+          </p>
+          <p class="text-lg">
+            <strong class="text-white">About to submit a vibecoded app and want to make sure it passes the first time?</strong>
+            <a href="https://cal.com/commit451/15min" target="_blank" rel="noopener noreferrer" class="text-brand-teal hover:text-brand-teal/80 transition-colors"> Book a free assessment</a> — we'll review your app against the full guidelines before you hit submit.
+          </p>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-16 rounded-2xl border border-brand-teal/30 bg-dark-900/70 p-8 text-center">
+          <h3 class="font-fira text-xl font-bold text-white">Don't lose 18 days to review rejections</h3>
+          <p class="mt-3 text-gray-400">We do a full compliance review before you submit — catching every issue in one pass instead of one rejection at a time.</p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="https://cal.com/commit451/15min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-teal px-8 py-3.5 text-sm font-semibold text-dark-950 hover:bg-brand-teal/90 transition-all hover:scale-105 shadow-lg shadow-brand-teal/20">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              Quick Chat — 15 min
+            </a>
+            <a href="https://cal.com/commit451/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-lg border border-brand-teal/60 px-8 py-3.5 text-sm font-semibold text-brand-teal hover:bg-brand-teal/10 transition-all hover:scale-105">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              Deep Dive — 30 min
+            </a>
+          </div>
+        </div>
+
+        <!-- Related Posts -->
+        <div class="mt-16">
+          <h3 class="font-fira text-lg font-bold text-white mb-6">Related Posts</h3>
+          <a href="/blog/vibecoded-app-production-ready/" class="block group rounded-xl border border-dark-700/60 bg-dark-900/50 p-6 hover:border-brand-teal/40 transition-all">
+            <h4 class="font-semibold text-white group-hover:text-brand-teal transition-colors">5 Things That Break When You Take a Vibecoded App to Production</h4>
+            <p class="mt-2 text-sm text-gray-400">The most common issues we see when vibecoded prototypes hit the real world — and how to fix them before launch.</p>
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-700/50 bg-dark-950/80 backdrop-blur-sm">
+    <div class="mx-auto max-w-6xl px-6 py-8">
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+        <p class="text-sm text-gray-500">&copy; 2026 Commit 451 LLC. All rights reserved.</p>
+        <nav class="flex gap-6 text-sm" aria-label="Footer navigation">
+          <a href="https://commit451.com/privacy" class="text-gray-500 hover:text-brand-teal transition-colors">Privacy</a>
+          <a href="https://commit451.com/terms" class="text-gray-500 hover:text-brand-teal transition-colors">Terms</a>
+          <a href="https://commit451.com/account-deletion" class="text-gray-500 hover:text-brand-teal transition-colors">Account Deletion</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
