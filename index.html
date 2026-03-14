@@ -163,6 +163,12 @@
   </script>
 
   <style>
+    @font-face {
+      font-family: "Arcane Nine";
+      src: url("/fonts/arcane-nine.ttf") format("truetype");
+      font-display: swap;
+    }
+    .font-arcane { font-family: "Arcane Nine", "Fira Code", monospace; }
     html { scroll-behavior: smooth; }
     body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -188,7 +194,7 @@
     <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
       <a href="#hero" class="flex items-center gap-3 group">
         <img src="/images/logo-v2.svg" alt="Commit 451 logo" width="36" height="36" class="transition-transform group-hover:scale-105">
-        <span class="font-fira font-bold text-lg text-white group-hover:text-brand-accent transition-colors">Commit 451</span>
+        <span class="font-arcane text-lg text-white group-hover:text-brand-accent transition-colors">Commit 451</span>
       </a>
       <div class="hidden sm:flex items-center gap-8 text-sm font-medium">
         <a href="#work" class="text-gray-400 hover:text-brand-accent transition-colors">Work</a>
@@ -224,7 +230,7 @@
             <img src="/images/logo-v2.svg" alt="Commit 451 company logo" width="140" height="140" class="relative">
           </div>
         </div>
-        <h1 class="font-fira text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+        <h1 class="font-arcane text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white">
           Commit <span class="text-brand-accent">451</span>
         </h1>
         <p class="mt-4 text-xl sm:text-2xl text-gray-400 font-light italic">It's a pleasure to build.</p>
