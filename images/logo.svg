@@ -120,13 +120,11 @@
     <g transform="matrix(1.642553,0,0,1.716585,-135.668117,-626.753415)">
         <g transform="matrix(108.341601,0,0,108.341601,455.53666,526.608451)">
         </g>
-        <text x="334.028px" y="526.608px" style="font-family:'ArcaneNine', 'Arcane Nine';font-size:108.342px;fill:rgb(18,26,46);">4<tspan x="378.912px 423.796px " y="526.608px 526.608px ">51</tspan></text>
-    </g>
+</g>
     <g transform="matrix(2.603485,0,0,2.603485,-436.349436,-1249.345045)">
         <g transform="matrix(19.205027,0,0,19.205027,393.34057,526.608451)">
         </g>
-        <text x="334.028px" y="526.608px" style="font-family:'ArcaneNine', 'Arcane Nine';font-size:19.205px;fill:rgb(31,42,68);">C<tspan x="342.112px 357.115px 367.074px 377.399px " y="526.608px 526.608px 526.608px 526.608px ">OMMI</tspan>T</text>
-    </g>
+</g>
     <g transform="matrix(1.714286,0,0,1.714286,-296.428571,-57.714286)">
         <circle cx="418.5" cy="95.5" r="3.5" style="fill:rgb(112,148,187);"/>
     </g>
