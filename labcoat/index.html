@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LabCoat for GitLab — A Native GitLab Client for Android & iOS</title>
+  <meta name="description" content="LabCoat is a native, open-source GitLab client for Android and iOS. Browse projects, issues, merge requests, pipelines, and more — all from your phone. Built with Kotlin Multiplatform by Commit 451.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Commit 451 LLC">
+  <meta name="keywords" content="GitLab, Android, iOS, Kotlin, open source, GitLab client, mobile app, merge requests, pipelines, issues, LabCoat">
+  <link rel="canonical" href="https://labcoat.commit451.com/">
+  <meta name="theme-color" content="#7c3aed">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LabCoat for GitLab — Native Mobile GitLab Client">
+  <meta property="og:description" content="Browse your GitLab projects, issues, merge requests, and pipelines from your phone. Open source, built with Kotlin Multiplatform.">
+  <meta property="og:url" content="https://labcoat.commit451.com/">
+  <meta property="og:image" content="https://commit451.com/images/labcoat_icon.png">
+  <meta property="og:site_name" content="LabCoat for GitLab">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@Commit451">
+  <meta name="twitter:title" content="LabCoat for GitLab — Native Mobile GitLab Client">
+  <meta name="twitter:description" content="Browse your GitLab projects, issues, merge requests, and pipelines from your phone. Open source.">
+  <meta name="twitter:image" content="https://commit451.com/images/labcoat_icon.png">
+
+  <link rel="icon" type="image/png" href="/images/labcoat_icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { accent: '#d65a31' },
+            labcoat: { 500: '#7c3aed', 400: '#a78bfa', 600: '#6d28d9' },
+            dark: { 950: '#030712', 900: '#111827', 800: '#1f2937', 700: '#374151' }
+          },
+          fontFamily: {
+            fira: ['"Fira Code"', 'monospace'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "LabCoat for GitLab",
+    "operatingSystem": "Android, iOS",
+    "applicationCategory": "DeveloperApplication",
+    "description": "A native, open-source GitLab client for Android and iOS. Browse projects, issues, merge requests, pipelines, and more.",
+    "url": "https://labcoat.commit451.com",
+    "image": "https://commit451.com/images/labcoat_icon.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Commit 451",
+      "url": "https://commit451.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "installUrl": "https://play.google.com/store/apps/details?id=com.commit451.gitlab",
+    "softwareVersion": "3.0",
+    "isAccessibleForFree": true
+  }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: "Arcane Nine";
+      src: url("/fonts/arcane-nine.ttf") format("truetype");
+      font-display: swap;
+    }
+    .font-arcane { font-family: "Arcane Nine", "Fira Code", monospace; }
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .glow-purple { box-shadow: 0 0 60px rgba(124, 58, 237, 0.12); }
+  </style>
+</head>
+<body class="bg-dark-950 text-gray-100 font-sans antialiased">
+
+  <!-- Background -->
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute inset-0 bg-gradient-to-b from-labcoat-600/5 via-dark-950 to-dark-950"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-dark-700/50 bg-dark-950/80 backdrop-blur-md">
+    <div class="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="/images/labcoat_icon.png" alt="LabCoat icon" width="36" height="36" class="rounded-lg transition-transform group-hover:scale-105">
+        <span class="font-fira font-bold text-lg text-white group-hover:text-labcoat-400 transition-colors">LabCoat</span>
+      </a>
+      <div class="flex items-center gap-6 text-sm font-medium">
+        <a href="#features" class="hidden sm:block text-gray-400 hover:text-labcoat-400 transition-colors">Features</a>
+        <a href="https://gitlab.com/AlfredBr/labcoat/-/releases" target="_blank" rel="noopener noreferrer" class="hidden sm:block text-gray-400 hover:text-labcoat-400 transition-colors">Releases</a>
+        <a href="https://gitlab.com/AlfredBr/labcoat" target="_blank" rel="noopener noreferrer" class="hidden sm:block text-gray-400 hover:text-labcoat-400 transition-colors">Source</a>
+        <a href="https://play.google.com/store/apps/details?id=com.commit451.gitlab" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-labcoat-500/60 px-4 py-2 text-labcoat-400 hover:bg-labcoat-500/10 transition-all">Get the App</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+      <div class="max-w-4xl text-center reveal">
+        <div class="flex justify-center mb-8">
+          <div class="relative">
+            <div class="absolute -inset-4 rounded-3xl bg-labcoat-500/30 blur-2xl"></div>
+            <img src="/images/labcoat_icon.png" alt="LabCoat for GitLab" width="128" height="128" class="relative rounded-3xl shadow-2xl">
+          </div>
+        </div>
+        <h1 class="font-arcane text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+          Lab<span class="text-labcoat-400">Coat</span>
+        </h1>
+        <p class="mt-3 text-xl sm:text-2xl text-gray-400 font-light">Your GitLab, in your pocket.</p>
+        <p class="mt-6 text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          A native, open-source GitLab client for Android and iOS. Browse projects, review merge requests, 
+          track issues, monitor pipelines — all from a fast, beautiful mobile app built with Kotlin Multiplatform.
+        </p>
+
+        <!-- Download buttons -->
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://play.google.com/store/apps/details?id=com.commit451.gitlab" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center justify-center gap-3 rounded-xl bg-labcoat-500 px-8 py-4 text-sm font-semibold text-white hover:bg-labcoat-600 transition-all hover:scale-105 shadow-lg shadow-labcoat-500/25">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302-2.698-2.302 2.698-2.302zM5.864 3.458L16.8 9.79l-2.301 2.302-8.635-8.634z"/></svg>
+            Google Play
+          </a>
+          <a href="https://gitlab.com/AlfredBr/labcoat" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center justify-center gap-3 rounded-xl border border-dark-700 px-8 py-4 text-sm font-medium text-gray-300 hover:border-labcoat-500 hover:text-labcoat-400 transition-all">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 01-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 014.82 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0118.6 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.51L23 13.45a.84.84 0 01-.35.94z"/></svg>
+            View Source
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="mt-14 flex flex-wrap justify-center gap-8 sm:gap-14">
+          <div>
+            <p class="text-3xl font-fira font-bold text-labcoat-400">50K+</p>
+            <p class="mt-1 text-sm text-gray-500">Installs</p>
+          </div>
+          <div>
+            <p class="text-3xl font-fira font-bold text-labcoat-400">⭐ #1</p>
+            <p class="mt-1 text-sm text-gray-500">Most Starred Kotlin Project on GitLab</p>
+          </div>
+          <div>
+            <p class="text-3xl font-fira font-bold text-labcoat-400">Free</p>
+            <p class="mt-1 text-sm text-gray-500">& Open Source</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshot Section -->
+    <section class="py-24 px-6">
+      <div class="mx-auto max-w-lg reveal">
+        <div class="relative mx-auto w-[280px] rounded-[2.5rem] border-[3px] border-dark-700 bg-dark-900 p-3 shadow-2xl glow-purple">
+          <img src="/images/labcoat_screenshot.png" alt="LabCoat app screenshot showing a GitLab project view" class="rounded-[2rem] w-full">
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24 sm:py-32 px-6">
+      <div class="mx-auto max-w-5xl">
+        <div class="text-center reveal">
+          <p class="text-sm font-fira font-bold text-labcoat-400 uppercase tracking-widest">Features</p>
+          <h2 class="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-white">Everything you need from GitLab, on the go</h2>
+        </div>
+        <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Feature cards -->
+          <div class="reveal rounded-2xl border border-dark-700/60 bg-dark-900/70 p-7 hover:border-labcoat-500/40 transition-all duration-300">
+            <div class="w-11 h-11 rounded-xl bg-labcoat-500/10 flex items-center justify-center mb-5">
+              <svg class="w-5 h-5 text-labcoat-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+            </div>
+            <h3 class="font-fira font-bold text-white">Projects</h3>
+            <p class="mt-2 text-sm text-gray-400 leading-relaxed">Browse projects, view READMEs with full markdown rendering, explore file trees, and star your favorites.</p>
+          </div>
+
+          <div class="reveal rounded-2xl border border-dark-700/60 bg-dark-900/70 p-7 hover:border-labcoat-500/40 transition-all duration-300">
+            <div class="w-11 h-11 rounded-xl bg-labcoat-500/10 flex items-center justify-center mb-5">
+              <svg class="w-5 h-5 text-labcoat-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            </div>
+            <h3 class="font-fira font-bold text-white">Issues</h3>
+            <p class="mt-2 text-sm text-gray-400 leading-relaxed">Create, browse, and manage issues. Filter by assignee, label, or milestone. Comment and update on the go.</p>
+          </div>
+
+          <div class="reveal rounded-2xl border border-dark-700/60 bg-dark-900/70 p-7 hover:border-labcoat-500/40 transition-all duration-300">
+            <div class="w-11 h-11 rounded-xl bg-labcoat-500/10 flex items-center justify-center mb-5">
+              <svg class="w-5 h-5 text-labcoat-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+            </div>
+            <h3 class="font-fira font-bold text-white">Merge Requests</h3>
+            <p class="mt-2 text-sm text-gray-400 leading-relaxed">Review merge requests, view diffs, check approvals, and stay on top of your code review queue.</p>
+          </div>
+
+          <div class="reveal rounded-2xl border border-dark-700/60 bg-dark-900/70 p-7 hover:border-labcoat-500/40 transition-all duration-300">
+            <div class="w-11 h-11 rounded-xl bg-labcoat-500/10 flex items-center justify-center mb-5">
+              <svg class="w-5 h-5 text-labcoat-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-fira font-bold text-white">Pipelines</h3>
+            <p class="mt-2 text-sm text-gray-400 leading-relaxed">Monitor CI/CD pipeline status, view job logs, and catch failures before they become problems.</p>
+          </div>
+
+          <div class="reveal rounded-2xl border border-dark-700/60 bg-dark-900/70 p-7 hover:border-labcoat-500/40 transition-all duration-300">
+            <div class="w-11 h-11 rounded-xl bg-labcoat-500/10 flex items-center justify-center mb-5">
+              <svg class="w-5 h-5 text-labcoat-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+            </div>
+            <h3 class="font-fira font-bold text-white">Push Notifications</h3>
+            <p class="mt-2 text-sm text-gray-400 leading-relaxed">Get notified about activity on your projects. Tap a notification and jump straight to the relevant screen.</p>
+          </div>
+
+          <div class="reveal rounded-2xl border border-dark-700/60 bg-dark-900/70 p-7 hover:border-labcoat-500/40 transition-all duration-300">
+            <div class="w-11 h-11 rounded-xl bg-labcoat-500/10 flex items-center justify-center mb-5">
+              <svg class="w-5 h-5 text-labcoat-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <h3 class="font-fira font-bold text-white">Self-Hosted Support</h3>
+            <p class="mt-2 text-sm text-gray-400 leading-relaxed">Works with GitLab.com and self-hosted GitLab instances. Your server, your data, your rules.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Open Source callout -->
+    <section class="py-24 px-6">
+      <div class="mx-auto max-w-3xl reveal">
+        <div class="rounded-2xl border border-labcoat-500/30 bg-gradient-to-br from-dark-900/90 to-dark-800/50 p-10 text-center glow-purple">
+          <p class="text-sm font-fira font-bold text-labcoat-400 uppercase tracking-widest">Open Source</p>
+          <h2 class="mt-4 text-2xl sm:text-3xl font-bold text-white">Built in the open, for the community</h2>
+          <p class="mt-4 text-gray-400 leading-relaxed max-w-xl mx-auto">
+            LabCoat is and always will be free and open source. Built with Kotlin Multiplatform, 
+            contributions are welcome. Check out the source, file issues, or submit a merge request.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://gitlab.com/AlfredBr/labcoat" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2 rounded-lg bg-labcoat-500 px-6 py-3 text-sm font-semibold text-white hover:bg-labcoat-600 transition-all hover:scale-105 shadow-lg shadow-labcoat-500/20">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 01-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 014.82 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0118.6 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.51L23 13.45a.84.84 0 01-.35.94z"/></svg>
+              View on GitLab
+            </a>
+            <a href="https://gitlab.com/AlfredBr/labcoat/-/issues" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2 rounded-lg border border-dark-700 px-6 py-3 text-sm font-medium text-gray-300 hover:border-labcoat-500 hover:text-labcoat-400 transition-all">
+              Report an Issue
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6">
+      <div class="mx-auto max-w-2xl text-center reveal">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white">Ready to try LabCoat?</h2>
+        <p class="mt-4 text-lg text-gray-400">Free on Google Play. iOS coming soon.</p>
+        <div class="mt-8">
+          <a href="https://play.google.com/store/apps/details?id=com.commit451.gitlab" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center justify-center gap-3 rounded-xl bg-labcoat-500 px-10 py-4 text-base font-semibold text-white hover:bg-labcoat-600 transition-all hover:scale-105 shadow-lg shadow-labcoat-500/25">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302-2.698-2.302 2.698-2.302zM5.864 3.458L16.8 9.79l-2.301 2.302-8.635-8.634z"/></svg>
+            Download on Google Play
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-700/50 bg-dark-950/80 backdrop-blur-sm">
+    <div class="mx-auto max-w-5xl px-6 py-8">
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+        <p class="text-sm text-gray-500">
+          Made with ❤️ by <a href="https://commit451.com" class="text-labcoat-400 hover:text-labcoat-400/80 transition-colors">Commit 451</a>
+        </p>
+        <nav class="flex gap-6 text-sm">
+          <a href="https://commit451.com/privacy" class="text-gray-500 hover:text-labcoat-400 transition-colors">Privacy</a>
+          <a href="https://commit451.com/terms" class="text-gray-500 hover:text-labcoat-400 transition-colors">Terms</a>
+          <a href="https://commit451.com/account-deletion" class="text-gray-500 hover:text-labcoat-400 transition-colors">Account Deletion</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll reveal -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Navbar shadow on scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('shadow-lg', window.scrollY > 20));
+  </script>
+</body>
+</html>
