@@ -1,0 +1,23 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width?: string;
+  borderRadius?: string;
+  innerRadius?: string;
+  loading?: 'lazy' | 'eager';
+}
+
+const {
+  src,
+  alt,
+  width = 'w-[240px]',
+  borderRadius = 'rounded-[2rem]',
+  innerRadius = 'rounded-[1.5rem]',
+  loading = 'lazy',
+} = Astro.props;
+---
+
+<div class={`relative mx-auto ${width} ${borderRadius} border-[3px] border-dark-700 bg-dark-900 p-2 shadow-2xl shadow-brand-accent/10`}>
+  <img src={src} alt={alt} class={`${innerRadius} w-full`} loading={loading}>
+</div>

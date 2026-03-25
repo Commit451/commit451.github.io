@@ -1,141 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know | Commit 451</title>
-  <meta name="description" content="Our app was rejected by Apple 9 times in a row, costing us 18 days. Here are the App Store review pitfalls that AI coding tools won't warn you about — and how to avoid them.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Commit 451">
-  <meta name="keywords" content="app store rejection, Apple review, vibecoded app rejected, Sign in with Apple, account deletion requirement, iOS app review, app store compliance, in-app purchases, StoreKit, AI generated app rejected">
-  <link rel="canonical" href="https://commit451.com/blog/app-store-rejections-vibecoded/">
-  <meta name="theme-color" content="#60d4c5">
-  <meta name="color-scheme" content="dark">
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+---
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know">
-  <meta property="og:description" content="9 rejections. 18 days lost. Here are the App Store pitfalls AI coding tools won't warn you about.">
-  <meta property="og:url" content="https://commit451.com/blog/app-store-rejections-vibecoded/">
-  <meta property="og:image" content="https://commit451.com/images/avatar.png">
-  <meta property="og:site_name" content="Commit 451">
-  <meta property="article:published_time" content="2026-03-12T00:00:00Z">
-  <meta property="article:author" content="Commit 451">
-  <meta property="article:section" content="Engineering">
-  <meta property="article:tag" content="app store">
-  <meta property="article:tag" content="vibe coding">
-  <meta property="article:tag" content="iOS">
+<BaseLayout
+  title="We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know | Commit 451"
+  description="Our app was rejected by Apple 9 times in a row, costing us 18 days. Here are the App Store review pitfalls that AI coding tools won't warn you about — and how to avoid them."
+  robots="index, follow"
+  author="Commit 451"
+  keywords="app store rejection, Apple review, vibecoded app rejected, Sign in with Apple, account deletion requirement, iOS app review, app store compliance, in-app purchases, StoreKit, AI generated app rejected"
+  canonical="https://commit451.com/blog/app-store-rejections-vibecoded/"
+  themeColor="#60d4c5"
+  ogType="article"
+  ogTitle="We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know"
+  ogDescription="9 rejections. 18 days lost. Here are the App Store pitfalls AI coding tools won't warn you about."
+  ogUrl="https://commit451.com/blog/app-store-rejections-vibecoded/"
+  ogImage="https://commit451.com/images/avatar.png"
+  ogSiteName="Commit 451"
+  twitterCard="summary_large_image"
+  twitterSite="@Commit451"
+  twitterTitle="We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know"
+  twitterDescription="9 rejections. 18 days lost. The App Store pitfalls AI coding tools won't warn you about."
+  twitterImage="https://commit451.com/images/avatar.png"
+>
+  <Fragment slot="head">
+    <meta property="article:published_time" content="2026-03-12T00:00:00Z" />
+    <meta property="article:author" content="Commit 451" />
+    <meta property="article:section" content="Engineering" />
+    <meta property="article:tag" content="app store" />
+    <meta property="article:tag" content="vibe coding" />
+    <meta property="article:tag" content="iOS" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@Commit451">
-  <meta name="twitter:title" content="We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know">
-  <meta name="twitter:description" content="9 rejections. 18 days lost. The App Store pitfalls AI coding tools won't warn you about.">
-  <meta name="twitter:image" content="https://commit451.com/images/avatar.png">
-
-  <link rel="icon" type="image/png" href="/favicon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { teal: '#60d4c5', red: '#e74c3c' },
-            dark: { 950: '#030712', 900: '#111827', 800: '#1f2937', 700: '#374151' }
-          },
-          fontFamily: {
-            fira: ['"Fira Code"', 'monospace'],
-            sans: ['Inter', 'system-ui', 'sans-serif']
-          }
+    <!-- Article Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know",
+      "description": "9 rejections, 18 days lost. The App Store review pitfalls that AI coding tools won't warn you about.",
+      "author": {
+        "@type": "Organization",
+        "name": "Commit 451",
+        "url": "https://commit451.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Commit 451",
+        "url": "https://commit451.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://commit451.com/images/avatar.png"
         }
-      }
-    }
-  </script>
-
-  <!-- Article Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know",
-    "description": "9 rejections, 18 days lost. The App Store review pitfalls that AI coding tools won't warn you about.",
-    "author": {
-      "@type": "Organization",
-      "name": "Commit 451",
-      "url": "https://commit451.com"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Commit 451",
-      "url": "https://commit451.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://commit451.com/images/avatar.png"
-      }
-    },
-    "datePublished": "2026-03-12",
-    "dateModified": "2026-03-12",
-    "mainEntityOfPage": "https://commit451.com/blog/app-store-rejections-vibecoded/",
-    "keywords": ["app store rejection", "Apple review", "vibe coding", "iOS", "Sign in with Apple", "account deletion", "in-app purchases"],
-    "articleSection": "Engineering"
-  }
-  </script>
-
-  <style>
-    html { scroll-behavior: smooth; }
-    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    .prose h2 { scroll-margin-top: 5rem; }
-    .prose code {
-      background: rgba(96, 212, 197, 0.1);
-      border: 1px solid rgba(96, 212, 197, 0.2);
-      border-radius: 0.375rem;
-      padding: 0.125rem 0.375rem;
-      font-size: 0.875em;
-      color: #60d4c5;
-    }
-    .prose pre code {
-      background: none;
-      border: none;
-      padding: 0;
-      color: inherit;
-    }
-    .callout {
-      border-left: 3px solid #e74c3c;
-      background: rgba(231, 76, 60, 0.05);
-    }
-    .callout-teal {
-      border-left: 3px solid #60d4c5;
-      background: rgba(96, 212, 197, 0.05);
-    }
-  </style>
-</head>
-<body class="bg-dark-950 text-gray-100 font-sans antialiased">
+      },
+      "datePublished": "2026-03-12",
+      "dateModified": "2026-03-12",
+      "mainEntityOfPage": "https://commit451.com/blog/app-store-rejections-vibecoded/",
+      "keywords": ["app store rejection", "Apple review", "vibe coding", "iOS", "Sign in with Apple", "account deletion", "in-app purchases"],
+      "articleSection": "Engineering"
+    })} />
+  </Fragment>
 
   <div class="fixed inset-0 -z-10">
     <div class="absolute inset-0 bg-dark-950"></div>
   </div>
 
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-dark-700/50 bg-dark-950/80 backdrop-blur-md">
-    <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3 group">
-        <img src="/images/avatar.png" alt="Commit 451 logo" width="36" height="36" class="rounded-full border border-dark-700 group-hover:border-brand-teal transition-colors">
-        <span class="font-fira font-bold text-lg text-white group-hover:text-brand-teal transition-colors">Commit 451</span>
-      </a>
-      <div class="hidden sm:flex items-center gap-8 text-sm font-medium">
-        <a href="/#work" class="text-gray-400 hover:text-brand-teal transition-colors">Work</a>
-        <a href="/#about" class="text-gray-400 hover:text-brand-teal transition-colors">About</a>
-        <a href="/blog/" class="text-brand-teal transition-colors">Blog</a>
-        <a href="https://cal.com/commit451/15min" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-brand-teal/60 px-4 py-2 text-brand-teal hover:bg-brand-teal/10 transition-all">Book a Call</a>
-      </div>
-    </div>
-  </nav>
+  <Navbar variant="blog" accentColor="teal" />
 
   <main>
     <article class="pt-28 pb-24 px-6">
@@ -144,9 +73,9 @@
         <!-- Breadcrumb -->
         <nav class="mb-8 text-sm text-gray-500" aria-label="Breadcrumb">
           <a href="/" class="hover:text-brand-teal transition-colors">Home</a>
-          <span class="mx-2">›</span>
+          <span class="mx-2">&rsaquo;</span>
           <a href="/blog/" class="hover:text-brand-teal transition-colors">Blog</a>
-          <span class="mx-2">›</span>
+          <span class="mx-2">&rsaquo;</span>
           <span class="text-gray-400">App Store Rejections</span>
         </nav>
 
@@ -166,9 +95,9 @@
           <div class="mt-6 flex items-center gap-4 text-sm text-gray-500">
             <img src="/images/avatar.png" alt="Commit 451" width="32" height="32" class="rounded-full border border-dark-700">
             <span>Commit 451</span>
-            <span>·</span>
+            <span>&middot;</span>
             <time datetime="2026-03-12">March 12, 2026</time>
-            <span>·</span>
+            <span>&middot;</span>
             <span>10 min read</span>
           </div>
         </header>
@@ -177,7 +106,7 @@
         <div class="prose max-w-none text-gray-300 leading-relaxed space-y-6">
 
           <div class="callout rounded-lg p-6 my-8">
-            <p class="text-white font-semibold mb-2">⏱️ The real cost of rejection</p>
+            <p class="text-white font-semibold mb-2">&#9201;&#65039; The real cost of rejection</p>
             <p class="text-gray-400 text-sm">Each App Store review takes roughly 24–48 hours. When you get rejected, you fix the issue, resubmit, and wait again. Nine rejections at ~2 days each meant <strong class="text-white">18 days of dead time</strong> between our "finished" app and actual launch. In the AI space, where the landscape shifts weekly, that's an eternity.</p>
           </div>
 
@@ -206,7 +135,7 @@
           </ul>
 
           <div class="callout-teal rounded-lg p-6 my-8">
-            <p class="text-white font-semibold mb-2">✅ How to avoid this rejection</p>
+            <p class="text-white font-semibold mb-2">&#9989; How to avoid this rejection</p>
             <p class="text-gray-400 text-sm">If your app has <em>any</em> third-party login, add Sign in with Apple from the start. Build it alongside your other auth flows, not as an afterthought. And make sure you handle the name-only-on-first-auth edge case — store it immediately on your backend.</p>
           </div>
 
@@ -229,7 +158,7 @@
           </p>
 
           <div class="callout-teal rounded-lg p-6 my-8">
-            <p class="text-white font-semibold mb-2">✅ How to avoid this rejection</p>
+            <p class="text-white font-semibold mb-2">&#9989; How to avoid this rejection</p>
             <p class="text-gray-400 text-sm">Add a "Delete Account" option in your app's settings or profile screen. Make it a clear, two-step flow (tap delete → confirm). Wire it to actually purge user data from your backend. If subscriptions are involved, show a message explaining they'll need to cancel separately in Settings → Subscriptions. Test the entire flow end-to-end before submitting.</p>
           </div>
 
@@ -260,7 +189,7 @@
           </p>
 
           <div class="callout-teal rounded-lg p-6 my-8">
-            <p class="text-white font-semibold mb-2">✅ How to avoid this rejection</p>
+            <p class="text-white font-semibold mb-2">&#9989; How to avoid this rejection</p>
             <p class="text-gray-400 text-sm">If your app has subscriptions, treat StoreKit integration as a first-class feature, not a bolt-on. Use StoreKit 2 (the modern API) if you're targeting iOS 15+. Display all pricing info clearly on your paywall — Apple provides APIs to fetch localized prices, use them. Implement restore purchases. Test thoroughly in the sandbox environment. And read <a href="https://developer.apple.com/app-store/review/guidelines/#in-app-purchase" target="_blank" rel="noopener noreferrer" class="text-brand-teal hover:text-brand-teal/80">section 3.1 of the guidelines</a> cover to cover — it's long, but every sentence matters.</p>
           </div>
 
@@ -282,7 +211,7 @@
           </ul>
 
           <div class="callout-teal rounded-lg p-6 my-8">
-            <p class="text-white font-semibold mb-2">✅ How to avoid this rejection</p>
+            <p class="text-white font-semibold mb-2">&#9989; How to avoid this rejection</p>
             <p class="text-gray-400 text-sm">Before submitting, do a full dependency audit. List every third-party SDK, check what data it collects, and fill out the privacy labels accurately. Write a privacy policy that matches (or use a generator and customize it). If in doubt, declare more rather than less — under-declaring is a rejection, over-declaring is just cautious.</p>
           </div>
 
@@ -304,7 +233,7 @@
           </p>
 
           <div class="callout-teal rounded-lg p-6 my-8">
-            <p class="text-white font-semibold mb-2">✅ How to avoid this rejection</p>
+            <p class="text-white font-semibold mb-2">&#9989; How to avoid this rejection</p>
             <p class="text-gray-400 text-sm">If you're wrapping a web app, add meaningful native features: push notifications, offline caching, widgets, Shortcuts integration, or native UI components. The more your app takes advantage of the platform, the less likely Apple is to flag it. If your app truly is just a website, consider publishing it as a Progressive Web App instead.</p>
           </div>
 
@@ -334,18 +263,18 @@
           </p>
           <div class="bg-dark-900 rounded-xl border border-dark-700 p-6 my-6">
             <ul class="space-y-3 text-gray-300">
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Sign in with Apple implemented (if you have any third-party sign-in)</li>
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Account deletion flow — accessible, functional, actually deletes data</li>
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> All in-app purchases use StoreKit (no third-party payment for digital goods)</li>
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Subscription pricing, duration, and renewal terms clearly displayed</li>
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Free trial conversion terms explicitly stated</li>
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Restore purchases button works in sandbox</li>
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Privacy nutrition labels filled out accurately</li>
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> Privacy policy accessible within the app</li>
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> ATT prompt if using any advertising/tracking SDKs</li>
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> App provides native value beyond a web wrapper</li>
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> App doesn't crash on any standard device/OS combination</li>
-              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">☐</span> No hardcoded API keys or secrets in the binary</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> Sign in with Apple implemented (if you have any third-party sign-in)</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> Account deletion flow — accessible, functional, actually deletes data</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> All in-app purchases use StoreKit (no third-party payment for digital goods)</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> Subscription pricing, duration, and renewal terms clearly displayed</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> Free trial conversion terms explicitly stated</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> Restore purchases button works in sandbox</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> Privacy nutrition labels filled out accurately</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> Privacy policy accessible within the app</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> ATT prompt if using any advertising/tracking SDKs</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> App provides native value beyond a web wrapper</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> App doesn't crash on any standard device/OS combination</li>
+              <li class="flex gap-3"><span class="text-brand-teal flex-shrink-0">&#9744;</span> No hardcoded API keys or secrets in the binary</li>
             </ul>
           </div>
 
@@ -390,18 +319,30 @@
     </article>
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-dark-700/50 bg-dark-950/80 backdrop-blur-sm">
-    <div class="mx-auto max-w-6xl px-6 py-8">
-      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-        <p class="text-sm text-gray-500">&copy; 2026 Commit 451 LLC. All rights reserved.</p>
-        <nav class="flex gap-6 text-sm" aria-label="Footer navigation">
-          <a href="https://commit451.com/privacy" class="text-gray-500 hover:text-brand-teal transition-colors">Privacy</a>
-          <a href="https://commit451.com/terms" class="text-gray-500 hover:text-brand-teal transition-colors">Terms</a>
-          <a href="https://commit451.com/account-deletion" class="text-gray-500 hover:text-brand-teal transition-colors">Account Deletion</a>
-        </nav>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
+  <Footer accentColor="teal" useAbsoluteLinks={true} />
+</BaseLayout>
+
+<style is:global>
+  .prose code {
+    background: rgba(96, 212, 197, 0.1);
+    border: 1px solid rgba(96, 212, 197, 0.2);
+    border-radius: 0.375rem;
+    padding: 0.125rem 0.375rem;
+    font-size: 0.875em;
+    color: #60d4c5;
+  }
+  .prose pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+  }
+  .callout {
+    border-left: 3px solid #e74c3c;
+    background: rgba(231, 76, 60, 0.05);
+  }
+  .callout-teal {
+    border-left: 3px solid #60d4c5;
+    background: rgba(96, 212, 197, 0.05);
+  }
+</style>

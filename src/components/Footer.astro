@@ -1,0 +1,25 @@
+---
+interface Props {
+  accentColor?: 'accent' | 'teal';
+  useAbsoluteLinks?: boolean;
+}
+
+const { accentColor = 'accent', useAbsoluteLinks = false } = Astro.props;
+const hoverColor = accentColor === 'accent' ? 'hover:text-brand-accent' : 'hover:text-brand-teal';
+const privacyHref = useAbsoluteLinks ? 'https://commit451.com/privacy' : '/privacy/';
+const termsHref = useAbsoluteLinks ? 'https://commit451.com/terms' : '/terms/';
+const deletionHref = useAbsoluteLinks ? 'https://commit451.com/account-deletion' : '/account-deletion/';
+---
+
+<footer class="border-t border-dark-700/50 bg-dark-950/80 backdrop-blur-sm">
+  <div class="mx-auto max-w-6xl px-6 py-8">
+    <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+      <p class="text-sm text-gray-500">&copy; 2026 Commit 451 LLC. All rights reserved.</p>
+      <nav class="flex gap-6 text-sm" aria-label="Footer navigation">
+        <a href={privacyHref} class={`text-gray-500 ${hoverColor} transition-colors`}>Privacy</a>
+        <a href={termsHref} class={`text-gray-500 ${hoverColor} transition-colors`}>Terms</a>
+        <a href={deletionHref} class={`text-gray-500 ${hoverColor} transition-colors`}>Account Deletion</a>
+      </nav>
+    </div>
+  </div>
+</footer>

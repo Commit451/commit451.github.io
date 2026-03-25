@@ -1,134 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5 Things That Break When You Take a Vibecoded App to Production | Commit 451</title>
-  <meta name="description" content="Built an app with Cursor, Copilot, or Claude? Here are the 5 most common issues we see when vibecoded prototypes hit the real world — and how to fix them before launch.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Commit 451">
-  <meta name="keywords" content="vibe coding, vibecoded app, AI generated code problems, Cursor app bugs, fix vibecoded project, AI prototype production, app store launch, code quality AI">
-  <link rel="canonical" href="https://commit451.com/blog/vibecoded-app-production-ready/">
-  <meta name="theme-color" content="#60d4c5">
-  <meta name="color-scheme" content="dark">
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+---
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="5 Things That Break When You Take a Vibecoded App to Production">
-  <meta property="og:description" content="Built an app with AI? Here are the 5 most common issues we see when vibecoded prototypes hit the real world — and how to fix them.">
-  <meta property="og:url" content="https://commit451.com/blog/vibecoded-app-production-ready/">
-  <meta property="og:image" content="https://commit451.com/images/avatar.png">
-  <meta property="og:site_name" content="Commit 451">
-  <meta property="article:published_time" content="2026-03-12T00:00:00Z">
-  <meta property="article:author" content="Commit 451">
-  <meta property="article:section" content="Engineering">
-  <meta property="article:tag" content="vibe coding">
-  <meta property="article:tag" content="production readiness">
-  <meta property="article:tag" content="code quality">
+<BaseLayout
+  title="5 Things That Break When You Take a Vibecoded App to Production | Commit 451"
+  description="Built an app with Cursor, Copilot, or Claude? Here are the 5 most common issues we see when vibecoded prototypes hit the real world — and how to fix them before launch."
+  robots="index, follow"
+  author="Commit 451"
+  keywords="vibe coding, vibecoded app, AI generated code problems, Cursor app bugs, fix vibecoded project, AI prototype production, app store launch, code quality AI"
+  canonical="https://commit451.com/blog/vibecoded-app-production-ready/"
+  themeColor="#60d4c5"
+  ogType="article"
+  ogTitle="5 Things That Break When You Take a Vibecoded App to Production"
+  ogDescription="Built an app with AI? Here are the 5 most common issues we see when vibecoded prototypes hit the real world — and how to fix them."
+  ogUrl="https://commit451.com/blog/vibecoded-app-production-ready/"
+  ogImage="https://commit451.com/images/avatar.png"
+  ogSiteName="Commit 451"
+  twitterCard="summary_large_image"
+  twitterSite="@Commit451"
+  twitterTitle="5 Things That Break When You Take a Vibecoded App to Production"
+  twitterDescription="Built an app with AI? Here are the 5 most common issues when vibecoded prototypes hit the real world."
+  twitterImage="https://commit451.com/images/avatar.png"
+>
+  <Fragment slot="head">
+    <meta property="article:published_time" content="2026-03-12T00:00:00Z" />
+    <meta property="article:author" content="Commit 451" />
+    <meta property="article:section" content="Engineering" />
+    <meta property="article:tag" content="vibe coding" />
+    <meta property="article:tag" content="production readiness" />
+    <meta property="article:tag" content="code quality" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@Commit451">
-  <meta name="twitter:title" content="5 Things That Break When You Take a Vibecoded App to Production">
-  <meta name="twitter:description" content="Built an app with AI? Here are the 5 most common issues when vibecoded prototypes hit the real world.">
-  <meta name="twitter:image" content="https://commit451.com/images/avatar.png">
-
-  <link rel="icon" type="image/png" href="/favicon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { teal: '#60d4c5', red: '#e74c3c' },
-            dark: { 950: '#030712', 900: '#111827', 800: '#1f2937', 700: '#374151' }
-          },
-          fontFamily: {
-            fira: ['"Fira Code"', 'monospace'],
-            sans: ['Inter', 'system-ui', 'sans-serif']
-          }
+    <!-- Article Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "5 Things That Break When You Take a Vibecoded App to Production",
+      "description": "The most common issues we see when vibecoded prototypes hit the real world, and how to fix them before launch.",
+      "author": {
+        "@type": "Organization",
+        "name": "Commit 451",
+        "url": "https://commit451.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Commit 451",
+        "url": "https://commit451.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://commit451.com/images/avatar.png"
         }
-      }
-    }
-  </script>
-
-  <!-- Article Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "5 Things That Break When You Take a Vibecoded App to Production",
-    "description": "The most common issues we see when vibecoded prototypes hit the real world, and how to fix them before launch.",
-    "author": {
-      "@type": "Organization",
-      "name": "Commit 451",
-      "url": "https://commit451.com"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Commit 451",
-      "url": "https://commit451.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://commit451.com/images/avatar.png"
-      }
-    },
-    "datePublished": "2026-03-12",
-    "dateModified": "2026-03-12",
-    "mainEntityOfPage": "https://commit451.com/blog/vibecoded-app-production-ready/",
-    "keywords": ["vibe coding", "AI generated code", "production readiness", "app development", "code quality"],
-    "articleSection": "Engineering"
-  }
-  </script>
-
-  <style>
-    html { scroll-behavior: smooth; }
-    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    .prose h2 { scroll-margin-top: 5rem; }
-    .prose code {
-      background: rgba(96, 212, 197, 0.1);
-      border: 1px solid rgba(96, 212, 197, 0.2);
-      border-radius: 0.375rem;
-      padding: 0.125rem 0.375rem;
-      font-size: 0.875em;
-      color: #60d4c5;
-    }
-    .prose pre code {
-      background: none;
-      border: none;
-      padding: 0;
-      color: inherit;
-    }
-  </style>
-</head>
-<body class="bg-dark-950 text-gray-100 font-sans antialiased">
+      },
+      "datePublished": "2026-03-12",
+      "dateModified": "2026-03-12",
+      "mainEntityOfPage": "https://commit451.com/blog/vibecoded-app-production-ready/",
+      "keywords": ["vibe coding", "AI generated code", "production readiness", "app development", "code quality"],
+      "articleSection": "Engineering"
+    })} />
+  </Fragment>
 
   <!-- Background -->
   <div class="fixed inset-0 -z-10">
     <div class="absolute inset-0 bg-dark-950"></div>
   </div>
 
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-dark-700/50 bg-dark-950/80 backdrop-blur-md">
-    <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3 group">
-        <img src="/images/avatar.png" alt="Commit 451 logo" width="36" height="36" class="rounded-full border border-dark-700 group-hover:border-brand-teal transition-colors">
-        <span class="font-fira font-bold text-lg text-white group-hover:text-brand-teal transition-colors">Commit 451</span>
-      </a>
-      <div class="hidden sm:flex items-center gap-8 text-sm font-medium">
-        <a href="/#work" class="text-gray-400 hover:text-brand-teal transition-colors">Work</a>
-        <a href="/#about" class="text-gray-400 hover:text-brand-teal transition-colors">About</a>
-        <a href="/blog/" class="text-brand-teal transition-colors">Blog</a>
-        <a href="/#contact" class="rounded-lg border border-brand-teal/60 px-4 py-2 text-brand-teal hover:bg-brand-teal/10 transition-all">Contact</a>
-      </div>
-    </div>
-  </nav>
+  <Navbar variant="blog" accentColor="teal" />
 
   <main>
     <article class="pt-28 pb-24 px-6">
@@ -137,9 +74,9 @@
         <!-- Breadcrumb -->
         <nav class="mb-8 text-sm text-gray-500" aria-label="Breadcrumb">
           <a href="/" class="hover:text-brand-teal transition-colors">Home</a>
-          <span class="mx-2">›</span>
+          <span class="mx-2">&rsaquo;</span>
           <a href="/blog/" class="hover:text-brand-teal transition-colors">Blog</a>
-          <span class="mx-2">›</span>
+          <span class="mx-2">&rsaquo;</span>
           <span class="text-gray-400">Vibecoded App to Production</span>
         </nav>
 
@@ -159,9 +96,9 @@
           <div class="mt-6 flex items-center gap-4 text-sm text-gray-500">
             <img src="/images/avatar.png" alt="Commit 451" width="32" height="32" class="rounded-full border border-dark-700">
             <span>Commit 451</span>
-            <span>·</span>
+            <span>&middot;</span>
             <time datetime="2026-03-12">March 12, 2026</time>
-            <span>·</span>
+            <span>&middot;</span>
             <span>8 min read</span>
           </div>
         </header>
@@ -315,18 +252,23 @@
     </article>
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-dark-700/50 bg-dark-950/80 backdrop-blur-sm">
-    <div class="mx-auto max-w-6xl px-6 py-8">
-      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-        <p class="text-sm text-gray-500">&copy; 2026 Commit 451 LLC. All rights reserved.</p>
-        <nav class="flex gap-6 text-sm" aria-label="Footer navigation">
-          <a href="https://commit451.com/privacy" class="text-gray-500 hover:text-brand-teal transition-colors">Privacy</a>
-          <a href="https://commit451.com/terms" class="text-gray-500 hover:text-brand-teal transition-colors">Terms</a>
-          <a href="https://commit451.com/account-deletion" class="text-gray-500 hover:text-brand-teal transition-colors">Account Deletion</a>
-        </nav>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
+  <Footer accentColor="teal" useAbsoluteLinks={true} />
+</BaseLayout>
+
+<style is:global>
+  .prose h2 { scroll-margin-top: 5rem; }
+  .prose code {
+    background: rgba(96, 212, 197, 0.1);
+    border: 1px solid rgba(96, 212, 197, 0.2);
+    border-radius: 0.375rem;
+    padding: 0.125rem 0.375rem;
+    font-size: 0.875em;
+    color: #60d4c5;
+  }
+  .prose pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+  }
+</style>

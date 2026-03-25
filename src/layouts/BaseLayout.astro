@@ -1,0 +1,146 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  robots?: string;
+  themeColor?: string;
+  colorScheme?: string;
+  author?: string;
+  keywords?: string;
+  ogType?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogUrl?: string;
+  ogImage?: string;
+  ogSiteName?: string;
+  twitterCard?: string;
+  twitterSite?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  twitterImage?: string;
+  favicon?: string;
+  faviconType?: string;
+  hreflang?: string;
+  preloadFontStyle?: boolean;
+  extraHead?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  robots,
+  themeColor = '#d65a31',
+  colorScheme = 'dark',
+  author,
+  keywords,
+  ogType,
+  ogTitle,
+  ogDescription,
+  ogUrl,
+  ogImage,
+  ogSiteName,
+  twitterCard,
+  twitterSite,
+  twitterTitle,
+  twitterDescription,
+  twitterImage,
+  favicon = '/images/favicon.svg',
+  faviconType = 'image/svg+xml',
+  hreflang,
+  preloadFontStyle = false,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  {robots && <meta name="robots" content={robots} />}
+  {author && <meta name="author" content={author} />}
+  {keywords && <meta name="keywords" content={keywords} />}
+  {canonical && <link rel="canonical" href={canonical} />}
+  {hreflang && <link rel="alternate" hreflang="en" href={hreflang} />}
+  <meta name="theme-color" content={themeColor} />
+  <meta name="color-scheme" content={colorScheme} />
+
+  {ogType && <meta property="og:type" content={ogType} />}
+  {ogTitle && <meta property="og:title" content={ogTitle} />}
+  {ogDescription && <meta property="og:description" content={ogDescription} />}
+  {ogUrl && <meta property="og:url" content={ogUrl} />}
+  {ogImage && <meta property="og:image" content={ogImage} />}
+  {ogSiteName && <meta property="og:site_name" content={ogSiteName} />}
+
+  {twitterCard && <meta name="twitter:card" content={twitterCard} />}
+  {twitterSite && <meta name="twitter:site" content={twitterSite} />}
+  {twitterTitle && <meta name="twitter:title" content={twitterTitle} />}
+  {twitterDescription && <meta name="twitter:description" content={twitterDescription} />}
+  {twitterImage && <meta name="twitter:image" content={twitterImage} />}
+
+  <link rel="icon" type={faviconType} href={favicon} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {preloadFontStyle && <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" />}
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <slot name="head" />
+</head>
+<body class="bg-dark-950 text-gray-100 font-sans antialiased">
+  <slot />
+
+  <script>
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => menu.classList.add('hidden'));
+      });
+    }
+
+    // Navbar background on scroll
+    const nav = document.querySelector('nav');
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('shadow-lg', window.scrollY > 20);
+      });
+    }
+  </script>
+</body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "Arcane Nine";
+    src: url("/fonts/arcane-nine.ttf") format("truetype");
+    font-display: swap;
+  }
+  .font-arcane { font-family: "Arcane Nine", "Fira Code", monospace; }
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .glow { box-shadow: 0 0 40px rgba(214, 90, 49, 0.08); }
+  .gradient-border { position: relative; }
+  .gradient-border::before {
+    content: ''; position: absolute; inset: -1px; border-radius: inherit;
+    background: linear-gradient(135deg, #d65a31 0%, #d65a31 100%); z-index: -1; opacity: 0.4;
+  }
+</style>

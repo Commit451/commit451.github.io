@@ -1,224 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commit 451 — Expert Software Consultancy | Mobile, Web & AI Solutions</title>
-  <meta name="description" content="Commit 451 is a boutique software consultancy specializing in mobile, web, and AI-driven solutions. We turn vibecoded prototypes into production-ready apps. Expert Android, iOS, and full-stack development. It's a pleasure to build.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Commit 451 LLC">
-  <meta name="keywords" content="software consultancy, mobile development, Android, iOS, web development, AI solutions, full-stack, Commit 451, vibe coding, vibecoded app, fix vibecoded project, AI prototype to production, app store launch">
-  <link rel="canonical" href="https://commit451.com/">
-  <link rel="alternate" hreflang="en" href="https://commit451.com/">
-  <meta name="theme-color" content="#d65a31">
-  <meta name="color-scheme" content="dark">
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Commit 451 — Expert Software Consultancy | Vibecode to Production">
-  <meta property="og:description" content="Boutique software consultancy specializing in mobile, web, and AI-driven solutions. We rescue vibecoded projects and ship them to real audiences. It's a pleasure to build.">
-  <meta property="og:url" content="https://commit451.com/">
-  <meta property="og:image" content="https://commit451.com/images/logo-v2.svg">
-  <meta property="og:site_name" content="Commit 451">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@Commit451">
-  <meta name="twitter:title" content="Commit 451 — Expert Software Consultancy | Vibecode to Production">
-  <meta name="twitter:description" content="Boutique software consultancy. We rescue vibecoded projects and ship them to real audiences.">
-  <meta name="twitter:image" content="https://commit451.com/images/logo-v2.svg">
-
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-
-  <!-- Fonts (preloaded for performance) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { accent: '#d65a31' },
-            dark: { 950: '#030712', 900: '#111827', 800: '#1f2937', 700: '#374151' }
-          },
-          fontFamily: {
-            fira: ['"Fira Code"', 'monospace'],
-            sans: ['Inter', 'system-ui', 'sans-serif']
+<BaseLayout
+  title="Commit 451 — Expert Software Consultancy | Mobile, Web & AI Solutions"
+  description="Commit 451 is a boutique software consultancy specializing in mobile, web, and AI-driven solutions. We turn vibecoded prototypes into production-ready apps. Expert Android, iOS, and full-stack development. It's a pleasure to build."
+  robots="index, follow"
+  author="Commit 451 LLC"
+  keywords="software consultancy, mobile development, Android, iOS, web development, AI solutions, full-stack, Commit 451, vibe coding, vibecoded app, fix vibecoded project, AI prototype to production, app store launch"
+  canonical="https://commit451.com/"
+  hreflang="https://commit451.com/"
+  ogType="website"
+  ogTitle="Commit 451 — Expert Software Consultancy | Vibecode to Production"
+  ogDescription="Boutique software consultancy specializing in mobile, web, and AI-driven solutions. We rescue vibecoded projects and ship them to real audiences. It's a pleasure to build."
+  ogUrl="https://commit451.com/"
+  ogImage="https://commit451.com/images/logo-v2.svg"
+  ogSiteName="Commit 451"
+  twitterCard="summary"
+  twitterSite="@Commit451"
+  twitterTitle="Commit 451 — Expert Software Consultancy | Vibecode to Production"
+  twitterDescription="Boutique software consultancy. We rescue vibecoded projects and ship them to real audiences."
+  twitterImage="https://commit451.com/images/logo-v2.svg"
+  preloadFontStyle={true}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Commit 451",
+      "url": "https://commit451.com",
+      "logo": "https://commit451.com/images/logo-v2.svg",
+      "description": "Boutique software consultancy specializing in mobile, web, and AI-driven solutions. We turn vibecoded prototypes into production-ready apps.",
+      "email": "hello@commit451.com",
+      "sameAs": [
+        "https://x.com/Commit451",
+        "https://github.com/Commit451",
+        "https://play.google.com/store/apps/dev?id=8992288925330781810"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@commit451.com",
+        "contactType": "customer service"
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does Commit 451 offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Commit 451 offers mobile app development (Android and iOS), web application development, AI and automation integration, vibecoded project rescue, and technical consulting including architecture reviews and code audits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What technologies does Commit 451 specialize in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We specialize in Kotlin, Jetpack Compose, Swift, React, TypeScript, Node.js, and AI/LLM integration. We have deep expertise in native Android development and modern full-stack web technologies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I contact Commit 451?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can reach us via email at hello@commit451.com. We're always open to hearing about new projects and interesting challenges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you fix my vibecoded app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We specialize in taking AI-generated and vibecoded prototypes and turning them into production-ready applications. We audit the code, fix architectural issues, add proper error handling and testing, optimize performance, and prepare your app for launch on the App Store or Google Play."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is vibecode rescue?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vibecode rescue is our service for founders and creators who have built an app prototype using AI coding tools like Cursor, Copilot, or Claude but need expert developers to make it production-ready. We handle code quality, security, scalability, app store compliance, and audience growth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I take my AI-built prototype to the App Store?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We help you go from prototype to published app. Our process includes a code audit, architecture improvements, UI/UX polish, app store optimization (ASO), compliance review, and launch support. We've shipped apps with over 1 million combined users across Google Play and the App Store."
           }
         }
-      }
-    }
-  </script>
-
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Commit 451",
-    "url": "https://commit451.com",
-    "logo": "https://commit451.com/images/logo-v2.svg",
-    "description": "Boutique software consultancy specializing in mobile, web, and AI-driven solutions. We turn vibecoded prototypes into production-ready apps.",
-    "email": "hello@commit451.com",
-    "sameAs": [
-      "https://x.com/Commit451",
-      "https://github.com/Commit451",
-      "https://play.google.com/store/apps/dev?id=8992288925330781810"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "hello@commit451.com",
-      "contactType": "customer service"
-    }
-  }
-  </script>
-
-  <!-- FAQ Schema for rich snippets -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What services does Commit 451 offer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Commit 451 offers mobile app development (Android and iOS), web application development, AI and automation integration, vibecoded project rescue, and technical consulting including architecture reviews and code audits."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What technologies does Commit 451 specialize in?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We specialize in Kotlin, Jetpack Compose, Swift, React, TypeScript, Node.js, and AI/LLM integration. We have deep expertise in native Android development and modern full-stack web technologies."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I contact Commit 451?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can reach us via email at hello@commit451.com. We're always open to hearing about new projects and interesting challenges."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you fix my vibecoded app?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. We specialize in taking AI-generated and vibecoded prototypes and turning them into production-ready applications. We audit the code, fix architectural issues, add proper error handling and testing, optimize performance, and prepare your app for launch on the App Store or Google Play."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is vibecode rescue?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Vibecode rescue is our service for founders and creators who have built an app prototype using AI coding tools like Cursor, Copilot, or Claude but need expert developers to make it production-ready. We handle code quality, security, scalability, app store compliance, and audience growth."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I take my AI-built prototype to the App Store?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We help you go from prototype to published app. Our process includes a code audit, architecture improvements, UI/UX polish, app store optimization (ASO), compliance review, and launch support. We've shipped apps with over 1 million combined users across Google Play and the App Store."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- ProfessionalService Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Commit 451",
-    "url": "https://commit451.com",
-    "logo": "https://commit451.com/images/logo-v2.svg",
-    "description": "Expert software consultancy specializing in mobile, web, and AI-driven solutions. We rescue vibecoded projects and ship them to real audiences.",
-    "email": "hello@commit451.com",
-    "priceRange": "$$",
-    "knowsAbout": ["Android Development", "iOS Development", "Kotlin", "React", "TypeScript", "AI Integration", "Software Architecture", "Vibe Coding", "AI-Generated Code Rescue", "App Store Optimization"],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Software Development Services",
-      "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mobile App Development"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web Application Development"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI & Automation Integration"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Vibecode Rescue — AI Prototype to Production"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Technical Consulting"}}
       ]
-    }
-  }
-  </script>
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Commit 451",
+      "url": "https://commit451.com",
+      "logo": "https://commit451.com/images/logo-v2.svg",
+      "description": "Expert software consultancy specializing in mobile, web, and AI-driven solutions. We rescue vibecoded projects and ship them to real audiences.",
+      "email": "hello@commit451.com",
+      "priceRange": "$$",
+      "knowsAbout": ["Android Development", "iOS Development", "Kotlin", "React", "TypeScript", "AI Integration", "Software Architecture", "Vibe Coding", "AI-Generated Code Rescue", "App Store Optimization"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Software Development Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mobile App Development"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web Application Development"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI & Automation Integration"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Vibecode Rescue — AI Prototype to Production"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Technical Consulting"}}
+        ]
+      }
+    })} />
+  </Fragment>
 
-  <style>
-    @font-face {
-      font-family: "Arcane Nine";
-      src: url("/fonts/arcane-nine.ttf") format("truetype");
-      font-display: swap;
-    }
-    .font-arcane { font-family: "Arcane Nine", "Fira Code", monospace; }
-    html { scroll-behavior: smooth; }
-    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .glow { box-shadow: 0 0 40px rgba(96, 212, 197, 0.08); }
-    .gradient-border { position: relative; }
-    .gradient-border::before {
-      content: ''; position: absolute; inset: -1px; border-radius: inherit;
-      background: linear-gradient(135deg, #d65a31 0%, #d65a31 100%); z-index: -1; opacity: 0.4;
-    }
+  <style is:global>
   </style>
-</head>
-<body class="bg-dark-950 text-gray-100 font-sans antialiased">
+
+  <Navbar variant="default" />
 
   <!-- Background -->
   <div class="fixed inset-0 -z-10">
     <img src="/images/bg.png" alt="" class="h-full w-full object-cover opacity-[0.07]" aria-hidden="true">
     <div class="absolute inset-0 bg-gradient-to-b from-dark-950/40 via-dark-950/90 to-dark-950"></div>
   </div>
-
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-dark-700/50 bg-dark-950/80 backdrop-blur-md" aria-label="Main navigation">
-    <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-      <a href="#hero" class="flex items-center gap-3 group">
-        <img src="/images/logo-v2.svg" alt="Commit 451 logo" width="36" height="36" class="transition-transform group-hover:scale-105">
-        <span class="font-arcane text-lg text-white group-hover:text-brand-accent transition-colors">Commit 451</span>
-      </a>
-      <div class="hidden sm:flex items-center gap-8 text-sm font-medium">
-        <a href="#work" class="text-gray-400 hover:text-brand-accent transition-colors">Work</a>
-        <a href="#about" class="text-gray-400 hover:text-brand-accent transition-colors">About</a>
-        <a href="#services" class="text-gray-400 hover:text-brand-accent transition-colors">Services</a>
-        <a href="/blog/" class="text-gray-400 hover:text-brand-accent transition-colors">Blog</a>
-        <a href="https://cal.com/commit451/15min" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-brand-accent/60 px-4 py-2 text-brand-accent hover:bg-brand-accent/10 transition-all">Book a Call</a>
-      </div>
-      <!-- Mobile menu button -->
-      <button id="menu-toggle" class="sm:hidden text-gray-400 hover:text-white" aria-label="Toggle menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-    </div>
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden sm:hidden border-t border-dark-700/50 bg-dark-950/95 backdrop-blur-md">
-      <div class="px-6 py-4 flex flex-col gap-4 text-sm font-medium">
-        <a href="#work" class="text-gray-400 hover:text-brand-accent transition-colors">Work</a>
-        <a href="#about" class="text-gray-400 hover:text-brand-accent transition-colors">About</a>
-        <a href="#services" class="text-gray-400 hover:text-brand-accent transition-colors">Services</a>
-        <a href="/blog/" class="text-gray-400 hover:text-brand-accent transition-colors">Blog</a>
-        <a href="#contact" class="text-brand-accent">Contact</a>
-      </div>
-    </div>
-  </nav>
 
   <main>
     <!-- Hero Section -->
@@ -235,7 +149,7 @@
         </h1>
         <p class="mt-4 text-xl sm:text-2xl text-gray-400 font-light italic">It's a pleasure to build.</p>
         <p class="mt-6 text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-          Expert software consultancy specializing in mobile, web, and AI-driven solutions. 
+          Expert software consultancy specializing in mobile, web, and AI-driven solutions.
           We craft polished, performant applications with obsessive attention to detail — and we turn vibecoded prototypes into production-ready apps people actually use.
         </p>
         <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -402,7 +316,7 @@
         <p class="text-sm font-fira font-bold text-brand-accent uppercase tracking-widest">Let's Talk</p>
         <h2 class="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-white">Have a challenge?</h2>
         <p class="mt-6 text-lg text-gray-400 leading-relaxed">
-          We're always open to hearing about interesting problems. Whether you need a mobile app, 
+          We're always open to hearing about interesting problems. Whether you need a mobile app,
           a web platform, help turning your vibecoded prototype into something real, or technical guidance — let's build something great together.
         </p>
         <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -429,14 +343,14 @@
         </div>
       </div>
     </section>
-<section id="about" class="py-24 sm:py-32 px-6">
+    <section id="about" class="py-24 sm:py-32 px-6">
       <div class="mx-auto max-w-4xl reveal">
         <div class="text-center">
           <p class="text-sm font-fira font-bold text-brand-accent uppercase tracking-widest">About Us</p>
           <h2 class="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-white">Building expressive interfaces</h2>
           <p class="mt-6 text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
-            Commit 451 is a boutique software consultancy founded on the belief that great software 
-            should be both powerful and delightful. We bring deep expertise across the entire 
+            Commit 451 is a boutique software consultancy founded on the belief that great software
+            should be both powerful and delightful. We bring deep expertise across the entire
             development lifecycle — from architecture and design through deployment and beyond.
           </p>
         </div>
@@ -518,9 +432,9 @@
                 <h3 class="font-fira font-bold text-white text-2xl">Vibecode Rescue</h3>
                 <p class="mt-1 text-brand-accent font-medium">Built it with AI? We'll make it real.</p>
                 <p class="mt-4 text-gray-400 leading-relaxed max-w-3xl">
-                  You had the vision. AI helped you prototype it. Now you need it to actually work — at scale, in production, with real users. 
-                  We take vibecoded projects built with tools like Cursor, Copilot, and Claude and transform them into polished, 
-                  production-ready applications. Code audit, architecture fixes, security hardening, performance optimization, 
+                  You had the vision. AI helped you prototype it. Now you need it to actually work — at scale, in production, with real users.
+                  We take vibecoded projects built with tools like Cursor, Copilot, and Claude and transform them into polished,
+                  production-ready applications. Code audit, architecture fixes, security hardening, performance optimization,
                   app store compliance, and launch support. From prototype to published — we bridge the gap.
                 </p>
                 <div class="mt-6 flex flex-wrap gap-3">
@@ -630,9 +544,9 @@
             </p>
             <div class="mt-4 flex items-center gap-3 text-sm text-gray-500">
               <time datetime="2026-03-12">March 12, 2026</time>
-              <span>·</span>
+              <span>&middot;</span>
               <span>10 min read</span>
-              <span class="ml-auto text-brand-accent group-hover:translate-x-1 transition-transform">Read →</span>
+              <span class="ml-auto text-brand-accent group-hover:translate-x-1 transition-transform">Read &rarr;</span>
             </div>
           </a>
           <a href="/blog/vibecoded-app-production-ready/" class="block group rounded-2xl border border-dark-700/60 bg-dark-900/70 backdrop-blur-sm p-8 hover:border-brand-accent/40 transition-all duration-300 glow reveal">
@@ -648,9 +562,9 @@
             </p>
             <div class="mt-4 flex items-center gap-3 text-sm text-gray-500">
               <time datetime="2026-03-12">March 12, 2026</time>
-              <span>·</span>
+              <span>&middot;</span>
               <span>8 min read</span>
-              <span class="ml-auto text-brand-accent group-hover:translate-x-1 transition-transform">Read →</span>
+              <span class="ml-auto text-brand-accent group-hover:translate-x-1 transition-transform">Read &rarr;</span>
             </div>
           </a>
         </div>
@@ -662,87 +576,46 @@
         </div>
       </div>
     </section>
+  </main>
 
-      </main>
+  <Footer />
+</BaseLayout>
 
-  <!-- Footer -->
-  <footer class="border-t border-dark-700/50 bg-dark-950/80 backdrop-blur-sm">
-    <div class="mx-auto max-w-6xl px-6 py-8">
-      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-        <p class="text-sm text-gray-500">&copy; 2026 Commit 451 LLC. All rights reserved.</p>
-        <nav class="flex gap-6 text-sm" aria-label="Footer navigation">
-          <a href="https://commit451.com/privacy" class="text-gray-500 hover:text-brand-accent transition-colors">Privacy</a>
-          <a href="https://commit451.com/terms" class="text-gray-500 hover:text-brand-accent transition-colors">Terms</a>
-          <a href="https://commit451.com/account-deletion" class="text-gray-500 hover:text-brand-accent transition-colors">Account Deletion</a>
-        </nav>
-      </div>
-    </div>
-  </footer>
+<script>
+(() => {
+  const track = document.getElementById('carousel-track');
+  const prev = document.getElementById('carousel-prev');
+  const next = document.getElementById('carousel-next');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const slides = track.children;
+  let current = 0;
+  const total = slides.length;
 
-  <!-- Scroll reveal + mobile menu -->
-  <script>
-    // Reveal on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Mobile menu toggle
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
-    menu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => menu.classList.add('hidden'));
+  function goTo(i) {
+    current = ((i % total) + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, idx) => {
+      d.classList.toggle('bg-brand-accent', idx === current);
+      d.classList.toggle('bg-dark-700', idx !== current);
     });
+  }
 
-    // Navbar background on scroll
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('shadow-lg', window.scrollY > 20);
-    });
+  prev.addEventListener('click', () => goTo(current - 1));
+  next.addEventListener('click', () => goTo(current + 1));
+  dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.index))));
 
-    // Carousel
-    (() => {
-      const track = document.getElementById('carousel-track');
-      const prev = document.getElementById('carousel-prev');
-      const next = document.getElementById('carousel-next');
-      const dots = document.querySelectorAll('.carousel-dot');
-      const slides = track.children;
-      let current = 0;
-      const total = slides.length;
+  // Touch/swipe support
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+  });
 
-      function goTo(i) {
-        current = ((i % total) + total) % total;
-        track.style.transform = `translateX(-${current * 100}%)`;
-        dots.forEach((d, idx) => {
-          d.classList.toggle('bg-brand-accent', idx === current);
-          d.classList.toggle('bg-dark-700', idx !== current);
-        });
-      }
-
-      prev.addEventListener('click', () => goTo(current - 1));
-      next.addEventListener('click', () => goTo(current + 1));
-      dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.index))));
-
-      // Touch/swipe support
-      let startX = 0;
-      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-      track.addEventListener('touchend', e => {
-        const diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
-      });
-
-      // Auto-advance every 6s
-      let autoplay = setInterval(() => goTo(current + 1), 6000);
-      [prev, next, ...dots].forEach(el => {
-        el.addEventListener('click', () => { clearInterval(autoplay); autoplay = setInterval(() => goTo(current + 1), 6000); });
-      });
-    })();
-  </script>
-</body>
-</html>
+  // Auto-advance every 6s
+  let autoplay = setInterval(() => goTo(current + 1), 6000);
+  [prev, next, ...dots].forEach(el => {
+    el.addEventListener('click', () => { clearInterval(autoplay); autoplay = setInterval(() => goTo(current + 1), 6000); });
+  });
+})();
+</script>

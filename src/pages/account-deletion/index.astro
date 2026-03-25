@@ -1,31 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Account Deletion — Commit 451</title>
-  <meta name="description" content="How to request account deletion for Commit 451 apps and services.">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#d65a31">
-  <link rel="canonical" href="https://commit451.com/account-deletion">
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { accent: '#d65a31' },
-            dark: { 950: '#030712', 900: '#111827', 800: '#1f2937', 700: '#374151' }
-          }
-        }
-      }
-    }
-  </script>
-</head>
-<body class="bg-dark-950 text-gray-100 antialiased">
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Account Deletion — Commit 451"
+  description="How to request account deletion for Commit 451 apps and services."
+  robots="index, follow"
+  canonical="https://commit451.com/account-deletion"
+>
   <main class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
-    <a href="/" class="text-sm text-brand-accent hover:underline">← Back to home</a>
+    <a href="/" class="text-sm text-brand-accent hover:underline">&larr; Back to home</a>
     <h1 class="mt-6 text-4xl font-bold tracking-tight text-white">Account Deletion</h1>
     <p class="mt-3 text-sm text-gray-400">Last updated: March 11, 2026</p>
 
@@ -64,5 +48,4 @@
       </section>
     </div>
   </main>
-</body>
-</html>
+</BaseLayout>

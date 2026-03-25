@@ -1,0 +1,92 @@
+---
+interface Props {
+  variant?: 'default' | 'blog' | 'labcoat';
+  accentColor?: 'accent' | 'teal';
+}
+
+const { variant = 'default', accentColor = 'accent' } = Astro.props;
+
+const isAccent = accentColor === 'accent';
+const hoverColor = isAccent ? 'hover:text-brand-accent' : 'hover:text-brand-teal';
+const activeColor = isAccent ? 'text-brand-accent' : 'text-brand-teal';
+const borderColor = isAccent ? 'border-brand-accent/60' : 'border-brand-teal/60';
+const hoverBg = isAccent ? 'hover:bg-brand-accent/10' : 'hover:bg-brand-teal/10';
+const hoverBorder = isAccent ? 'hover:border-brand-accent' : 'hover:border-brand-teal';
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 border-b border-dark-700/50 bg-dark-950/80 backdrop-blur-md" aria-label="Main navigation">
+  <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+    {variant === 'labcoat' ? (
+      <a href="/labcoat/" class="flex items-center gap-3 group">
+        <img src="/images/labcoat_icon.png" alt="LabCoat icon" width="36" height="36" class="rounded-lg transition-transform group-hover:scale-105">
+        <span class="font-arcane text-lg text-white group-hover:text-brand-accent transition-colors">LabCoat</span>
+      </a>
+    ) : variant === 'blog' ? (
+      <a href="/" class="flex items-center gap-3 group">
+        <img src="/images/avatar.png" alt="Commit 451 logo" width="36" height="36" class={`rounded-full border border-dark-700 group-${hoverBorder} transition-colors`}>
+        <span class={`font-fira font-bold text-lg text-white group-${hoverColor} transition-colors`}>Commit 451</span>
+      </a>
+    ) : (
+      <a href="#hero" class="flex items-center gap-3 group">
+        <img src="/images/logo-v2.svg" alt="Commit 451 logo" width="36" height="36" class="transition-transform group-hover:scale-105">
+        <span class="font-arcane text-lg text-white group-hover:text-brand-accent transition-colors">Commit 451</span>
+      </a>
+    )}
+
+    {variant === 'labcoat' ? (
+      <div class="hidden sm:flex items-center gap-8 text-sm font-medium">
+        <a href="#features" class={`text-gray-400 ${hoverColor} transition-colors`}>Features</a>
+        <a href="https://gitlab.com/Commit451/LabCoat/-/releases" target="_blank" rel="noopener noreferrer" class={`text-gray-400 ${hoverColor} transition-colors`}>Releases</a>
+        <a href="https://gitlab.com/Commit451/LabCoat" target="_blank" rel="noopener noreferrer" class={`text-gray-400 ${hoverColor} transition-colors`}>Source</a>
+        <a href="https://play.google.com/store/apps/details?id=com.commit451.gitlab" target="_blank" rel="noopener noreferrer" class={`rounded-lg border ${borderColor} px-4 py-2 ${activeColor} ${hoverBg} transition-all`}>Get the App</a>
+      </div>
+    ) : variant === 'blog' ? (
+      <div class="hidden sm:flex items-center gap-8 text-sm font-medium">
+        <a href="/#work" class={`text-gray-400 ${hoverColor} transition-colors`}>Work</a>
+        <a href="/#about" class={`text-gray-400 ${hoverColor} transition-colors`}>About</a>
+        <a href="/blog/" class={`${activeColor} transition-colors`}>Blog</a>
+        <a href="/#contact" class={`rounded-lg border ${borderColor} px-4 py-2 ${activeColor} ${hoverBg} transition-all`}>Contact</a>
+      </div>
+    ) : (
+      <div class="hidden sm:flex items-center gap-8 text-sm font-medium">
+        <a href="#work" class={`text-gray-400 ${hoverColor} transition-colors`}>Work</a>
+        <a href="#about" class={`text-gray-400 ${hoverColor} transition-colors`}>About</a>
+        <a href="#services" class={`text-gray-400 ${hoverColor} transition-colors`}>Services</a>
+        <a href="/blog/" class={`text-gray-400 ${hoverColor} transition-colors`}>Blog</a>
+        <a href="https://cal.com/commit451/15min" target="_blank" rel="noopener noreferrer" class={`rounded-lg border ${borderColor} px-4 py-2 ${activeColor} ${hoverBg} transition-all`}>Book a Call</a>
+      </div>
+    )}
+
+    <button id="menu-toggle" class="sm:hidden text-gray-400 hover:text-white" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden sm:hidden border-t border-dark-700/50 bg-dark-950/95 backdrop-blur-md">
+    <div class="px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+      {variant === 'labcoat' ? (
+        <>
+          <a href="#features" class={`text-gray-400 ${hoverColor} transition-colors`}>Features</a>
+          <a href="https://gitlab.com/Commit451/LabCoat/-/releases" target="_blank" rel="noopener noreferrer" class={`text-gray-400 ${hoverColor} transition-colors`}>Releases</a>
+          <a href="https://gitlab.com/Commit451/LabCoat" target="_blank" rel="noopener noreferrer" class={`text-gray-400 ${hoverColor} transition-colors`}>Source</a>
+          <a href="https://play.google.com/store/apps/details?id=com.commit451.gitlab" target="_blank" rel="noopener noreferrer" class={activeColor}>Get the App</a>
+        </>
+      ) : variant === 'blog' ? (
+        <>
+          <a href="/#work" class={`text-gray-400 ${hoverColor} transition-colors`}>Work</a>
+          <a href="/#about" class={`text-gray-400 ${hoverColor} transition-colors`}>About</a>
+          <a href="/blog/" class={`${activeColor} transition-colors`}>Blog</a>
+          <a href="/#contact" class={activeColor}>Contact</a>
+        </>
+      ) : (
+        <>
+          <a href="#work" class={`text-gray-400 ${hoverColor} transition-colors`}>Work</a>
+          <a href="#about" class={`text-gray-400 ${hoverColor} transition-colors`}>About</a>
+          <a href="#services" class={`text-gray-400 ${hoverColor} transition-colors`}>Services</a>
+          <a href="/blog/" class={`text-gray-400 ${hoverColor} transition-colors`}>Blog</a>
+          <a href="#contact" class={activeColor}>Contact</a>
+        </>
+      )}
+    </div>
+  </div>
+</nav>

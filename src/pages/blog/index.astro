@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Blog — Commit 451 | Software Engineering & Vibe Coding Insights"
+  description="Insights on mobile development, AI integration, vibe coding, and shipping production-ready software. From the team at Commit 451."
+  robots="index, follow"
+  author="Commit 451 LLC"
+  keywords="software engineering blog, vibe coding, AI development, mobile app development, Android, iOS, production readiness"
+  canonical="https://commit451.com/blog/"
+  ogType="website"
+  ogTitle="Blog — Commit 451"
+  ogDescription="Insights on mobile development, AI integration, vibe coding, and shipping production-ready software."
+  ogUrl="https://commit451.com/blog/"
+  ogImage="https://commit451.com/images/avatar.png"
+  ogSiteName="Commit 451"
+  twitterCard="summary"
+  twitterSite="@Commit451"
+  twitterTitle="Blog — Commit 451"
+  twitterDescription="Insights on mobile development, AI integration, vibe coding, and shipping production-ready software."
+>
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute inset-0 bg-dark-950"></div>
+  </div>
+
+  <Navbar variant="blog" accentColor="accent" />
+
+  <main class="pt-28 pb-24 px-6">
+    <div class="mx-auto max-w-4xl">
+      <header class="text-center mb-16">
+        <p class="text-sm font-fira font-bold text-brand-accent uppercase tracking-widest">Blog</p>
+        <h1 class="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-white">Insights & Engineering Notes</h1>
+        <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+          Practical takes on mobile development, AI integration, vibe coding, and shipping software that actually works.
+        </p>
+      </header>
+      <div class="space-y-8">
+        <!-- Post 2 -->
+        <a href="/blog/app-store-rejections-vibecoded/" class="block group rounded-2xl border border-dark-700/60 bg-dark-900/70 backdrop-blur-sm p-8 hover:border-brand-accent/40 transition-all duration-300">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="text-xs px-2.5 py-1 rounded-full bg-brand-accent/10 text-brand-accent border border-brand-accent/20">App Store</span>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-brand-accent/10 text-brand-accent border border-brand-accent/20">Vibe Coding</span>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-brand-accent/10 text-brand-accent border border-brand-accent/20">iOS</span>
+          </div>
+          <h2 class="font-fira text-xl sm:text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">
+            We Got Rejected by Apple 9 Times — Here's What Every Vibecoder Needs to Know
+          </h2>
+          <p class="mt-3 text-gray-400 leading-relaxed">
+            9 rejections. 18 days lost. Each review cycle took about 2 days, and each time we thought we'd nailed it. Here are the App Store pitfalls AI coding tools won't warn you about.
+          </p>
+          <div class="mt-4 flex items-center gap-3 text-sm text-gray-500">
+            <time datetime="2026-03-12">March 12, 2026</time>
+            <span>&middot;</span>
+            <span>10 min read</span>
+          </div>
+        </a>
+        <!-- Post 1 -->
+        <a href="/blog/vibecoded-app-production-ready/" class="block group rounded-2xl border border-dark-700/60 bg-dark-900/70 backdrop-blur-sm p-8 hover:border-brand-accent/40 transition-all duration-300">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="text-xs px-2.5 py-1 rounded-full bg-brand-accent/10 text-brand-accent border border-brand-accent/20">Vibe Coding</span>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-brand-accent/10 text-brand-accent border border-brand-accent/20">Production Readiness</span>
+          </div>
+          <h2 class="font-fira text-xl sm:text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">
+            5 Things That Break When You Take a Vibecoded App to Production
+          </h2>
+          <p class="mt-3 text-gray-400 leading-relaxed">
+            Built an app with Cursor, Copilot, or Claude? It works on your machine. Here's what happens when real users find it — and how to fix the five most common issues before launch.
+          </p>
+          <div class="mt-4 flex items-center gap-3 text-sm text-gray-500">
+            <time datetime="2026-03-12">March 12, 2026</time>
+            <span>&middot;</span>
+            <span>8 min read</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer accentColor="accent" useAbsoluteLinks={true} />
+</BaseLayout>
