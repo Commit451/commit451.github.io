@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Support — Commit 451"
+  description="Need help with a Commit 451 product? Contact support and we'll help you out."
+  robots="index, follow"
+  author="Commit 451 LLC"
+  keywords="Commit 451 support, Commit 451 help, support"
+  canonical="https://commit451.com/support/"
+  ogType="website"
+  ogTitle="Support — Commit 451"
+  ogDescription="Running into issues or have questions? We're here to help!"
+  ogUrl="https://commit451.com/support/"
+  ogImage="https://commit451.com/images/logo-v2.svg"
+  ogSiteName="Commit 451"
+  twitterCard="summary"
+  twitterSite="@Commit451"
+  twitterTitle="Support — Commit 451"
+  twitterDescription="Running into issues or have questions? We're here to help!"
+  twitterImage="https://commit451.com/images/logo-v2.svg"
+>
+  <Navbar variant="default" />
+
+  <div class="fixed inset-0 -z-10">
+    <img src="/images/bg.png" alt="" class="h-full w-full object-cover opacity-[0.07]" aria-hidden="true">
+    <div class="absolute inset-0 bg-gradient-to-b from-dark-950/40 via-dark-950/90 to-dark-950"></div>
+  </div>
+
+  <main>
+    <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+      <div class="max-w-2xl text-center reveal">
+        <p class="text-sm font-fira font-bold text-brand-accent uppercase tracking-widest">Support</p>
+        <h1 class="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-white">
+          Running into issues or have questions? We&apos;re here to help!
+        </h1>
+        <div class="mt-10">
+          <a
+            href="mailto:support@commit451.com"
+            class="inline-flex items-center justify-center rounded-lg bg-brand-accent px-10 py-5 text-lg font-semibold text-dark-950 hover:bg-brand-accent/90 transition-all hover:scale-105 shadow-lg shadow-brand-accent/20"
+          >
+            Email us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
